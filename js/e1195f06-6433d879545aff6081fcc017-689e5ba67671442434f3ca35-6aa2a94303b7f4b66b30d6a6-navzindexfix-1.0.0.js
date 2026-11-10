@@ -1,0 +1,1 @@
+(function(){var s=document.createElement('style');s.textContent='.elw-navbar .elw-nb-header{z-index:1000}';document.head.appendChild(s);})();

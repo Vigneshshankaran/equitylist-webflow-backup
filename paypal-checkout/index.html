@@ -1,0 +1,854 @@
+<!DOCTYPE html><!-- This site was created in Webflow. https://webflow.com --><!-- Last Published: Tue Nov 10 2026 11:41:45 GMT+0000 (Coordinated Universal Time) --><html data-wf-domain="equitylist.webflow.io" data-wf-page="65fa51d760a13e9aa7240538" data-wf-site="6433d879545aff6081fcc017" lang="en"><head><meta name="robots" content="noindex, nofollow"><meta charset="utf-8"/><base target="_parent"/><link href="https://cdn.prod.website-files.com" rel="preconnect"/><title>EquityList</title><meta content="width=device-width, initial-scale=1" name="viewport"/><meta content="yazGXh9BX9WC2mKLwpOmKWUQEefSV7zaXoJ34e824" name="google-site-verification"/><meta content="Webflow" name="generator"/><link href="../css/68832c9c-equitylist.webflow.shared.eb4044f34.css" rel="stylesheet" type="text/css"/><style>html.w-mod-js:not(.w-mod-ix3) :is(.nav26-trigger, .nav26-signin, .nav26-demo, .nav26-start, .nav26-dd) {visibility: hidden !important;}</style><link href="https://fonts.googleapis.com" rel="preconnect"/><link href="https://fonts.gstatic.com" rel="preconnect"/><script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script><script type="text/javascript">WebFont.load({  google: {    families: ["Varela:400","Open Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic","Geist:100,200,300,400,500,600,700,800,900","Geist Mono:100,200,300,400,500,600,700,800,900","Lora:400,500,600,700"]  }});</script><script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script><link href="https://cdn.prod.website-files.com/6433d879545aff6081fcc017/66ac9386b9dbd29443166e6d_EquityList-brand-logo-32.png" rel="shortcut icon" type="image/x-icon"/><link href="https://cdn.prod.website-files.com/6433d879545aff6081fcc017/66ac9564d3f258b4c1902da2_EquityList-brand-logo-256.png" rel="apple-touch-icon"/><link href="https://www.equitylist.co/paypal-checkout" rel="canonical"/><!-- Referrer: send the full page URL to the app so PostHog sees the source page -->
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<!-- Google site verification -->
+<meta name="google-site-verification" content="wILa5aO_MuXVEUhJt1ijeXcMJIJsONroEMhoAC2v91Y" />
+
+<!-- (Optional) tiny perf win for GTM -->
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://www.googletagmanager.com">
+
+<!-- Consent Mode: default denied + immediately re-apply saved consent BEFORE GTM -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+
+  // 1) Default (runs first): deny everything until the user's stored choice is applied
+  gtag('consent','default', {
+    ad_storage: 'denied',
+    analytics_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    personalization_storage: 'denied'
+  });
+
+  // 2) Re-apply the user's previously saved consent immediately (no waiting for DOMContentLoaded)
+  (function () {
+    try {
+      var mode = localStorage.getItem('ga_consent'); // 'granted' | 'denied' | 'granular'
+      if (!mode) return;
+
+      if (mode === 'granted' || mode === 'denied') {
+        gtag('consent','update',{
+          ad_storage: mode,
+          analytics_storage: mode,
+          ad_user_data: mode,
+          ad_personalization: mode,
+          personalization_storage: mode
+        });
+      } else if (mode === 'granular') {
+        var analyticsOn = localStorage.getItem('ga_analytics') === '1';
+        var marketingOn = localStorage.getItem('ga_marketing') === '1';
+        var personalizationOn = localStorage.getItem('ga_personalization') === '1';
+        gtag('consent','update',{
+          analytics_storage:   analyticsOn ? 'granted':'denied',
+          ad_storage:          marketingOn ? 'granted':'denied',
+          ad_user_data:        marketingOn ? 'granted':'denied',
+          ad_personalization:  marketingOn ? 'granted':'denied',
+          personalization_storage: personalizationOn ? 'granted':'denied'
+        });
+      }
+    } catch(e) { /* no-op */ }
+  })();
+</script>
+
+<!-- Finsweet Cookie Consent (opt-in) -->
+<script async src="https://cdn.jsdelivr.net/npm/@finsweet/cookie-consent@1/fs-cc.js"
+        fs-cc-mode="opt-in"
+        fs-cc-endpoint="https://equitylist.divya-f71.workers.dev/"></script>
+
+<!-- Your styles (kept, removed the stray invalid CSS text) -->
+<style>
+  .button-3 {
+    position: relative;
+    background-image: linear-gradient(135deg, hsl(244,49%,44%), hsl(244,49%,44%));
+    z-index: 1;
+    transition: background-image 0.3s ease;
+  }
+  .button-3::before {
+    position: absolute; border-radius: .5rem; content:"";
+    inset: 0;
+    background-image: linear-gradient(135deg, hsl(244,49%,44%) 0%, hsl(244,49%,44%) 50%, hsl(244,39%,61%) 100%);
+    z-index: -1; transition: opacity .3s ease; opacity: 0;
+  }
+  .button-3:hover::before { opacity: 1; }
+
+  .button-3.flat { position: relative; z-index: 1; transition: background-image .3s ease; }
+  .button-3.flat::before {
+    position: absolute; border-radius: 2px; content:"";
+    inset: 0;
+    background-image: linear-gradient(135deg, hsl(244,49%,44%) 0%, hsl(244,49%,44%) 50%, hsl(244,39%,61%) 100%);
+    z-index: -1; transition: opacity .3s ease; opacity: 0;
+  }
+  .button-3.flat:hover::before { opacity: 1; }
+</style>
+
+<!-- Structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "WebSite",
+  "name": "Equitylist",
+  "url": "https://www.equitylist.co/",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "{search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
+<!-- Google Tag Manager (load AFTER consent setup above) -->
+<script>
+(function(w,d,s,l,i){
+  w[l]=w[l]||[]; w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+  var f=d.getElementsByTagName(s)[0], j=d.createElement(s), dl=l!='dataLayer'?'&l='+l:'';
+  j.async=true; j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+  f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NWQ4KLRG');
+</script>
+
+
+<!-- Added DataFast - Oct 30 -->
+<script
+  defer
+  data-website-id="dfid_C70BpGfGepZ2EinLxjOYU"
+  data-domain="equitylist.co"
+  src="https://datafa.st/js/script.js" type="fs-cc" fs-cc-categories="analytics">
+</script>
+
+<!-- PostHog: website visitor journey (same project as the app). Loads only after analytics cookie consent. -->
+<script type="fs-cc" fs-cc-categories="analytics">
+!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],Object.defineProperty(u,"toString",{configurable:!0,enumerable:!0,writable:!0,value:function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e}}),Object.defineProperty(u.people,"toString",{configurable:!0,enumerable:!0,writable:!0,value:function(){return u.toString(1)+".people (stub)"}}),o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagResult isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+posthog.init('phc_louGneW9Kw1x16tYDivbegtgTK0M5JIQ0sXPgJ5jDAY', {
+  api_host: 'https://us.i.posthog.com',
+  defaults: '2026-08-30',
+  person_profiles: 'identified_only',
+  disable_session_recording: true
+});
+</script>
+
+<style>
+/* Only rules Webflow classes cannot express live here:
+   - descendant-on-hover (.parent:hover .child) — Webflow hover styles only the
+     hovered element, not its children; native Webflow would need Interactions
+   - adjacent-sibling spacing (.a + .a) — a base margin would also hit the first
+     item; Webflow classes have no sibling selector
+   - attribute selectors ([data-*]) — Webflow styles are class-based only
+   - @keyframes / animation — no custom keyframes in Webflow
+   - prefers-reduced-motion — Webflow supports only its own breakpoints
+   Everything else (including .elf-newsletter-btn-1:hover and
+   .elf-newsletter-row:focus-within) is a native Webflow style. */
+
+/* Hover states (replacing JS mouseenter/mouseleave) */
+.mm2-item:hover { background-color: rgba(28,29,31,0.04); }
+.mm2-item:hover .mm2-item-icon { background-color: #EDE9FE; }
+.mm2-item:hover .mm2-item-arrow { opacity: 1; transform: translateX(0px); }
+
+.mm2-item + .mm2-item:not(.mm2-item-half) { margin-top: 4px; }
+
+.mm2-lead-link:hover .mm2-lead-link-arrow { transform: translateX(2px); }
+
+/* Primary CTA wipe hover (.ph-btn-primary / .ph-btn-arrow) — mirrors the
+   Next.js .el-btn/.el-chip recipe: a left-origin ::before wipe on the button
+   and a flat-to-inverted colour swap on the trailing chip. Both are
+   pseudo-element + descendant-hover, so they live here rather than as native
+   Webflow styles; the base non-pseudo look for both classes is a real
+   Webflow style so the classes themselves aren't dropped. */
+.ph-btn-primary::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: #4F3AD9;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 420ms cubic-bezier(0.16,1,0.3,1);
+}
+@media (hover: hover) and (pointer: fine) {
+  .ph-btn-primary:hover::before { transform: scaleX(1); }
+  .ph-btn-primary:hover .ph-btn-arrow { background-color: #ffffff; color: #5F46FF; }
+}
+.ph-btn-primary:active { transform: scale(0.985); }
+
+.ph-btn-secondary:hover .ph-btn-play { transform: scale(1.05); }
+
+/* Service-page CTA wipe hover (.av-cta-btn / .av-cta-arrow) — same el-btn/el-chip
+   recipe as .ph-btn-primary above, now that ServiceHero's CTA matches it. */
+.av-cta-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: #4F3AD9;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 420ms cubic-bezier(0.16,1,0.3,1);
+}
+@media (hover: hover) and (pointer: fine) {
+  .av-cta-btn:hover::before { transform: scaleX(1); }
+  .av-cta-btn:hover .av-cta-arrow { background-color: #ffffff; color: #5F46FF; }
+}
+.av-cta-btn:active { transform: scale(0.985); }
+
+.av-why-card:hover .av-why-icon-inner { transform: rotate(-6deg) scale(1.1); }
+
+.av-fs-navbtn:not(.av-fs-nav-active):hover { background-color: rgba(28,29,31,0.04); color: #131314; }
+
+.av-fs-panel .av-proc-check-item { opacity: 0; transform: translateX(-8px); transition: opacity 0.3s ease-out, transform 0.3s ease-out; }
+.av-fs-panel.av-fs-active .av-proc-check-item { opacity: 1; transform: translateX(0); }
+.av-fs-panel.av-fs-active .av-proc-check-item:nth-child(1) { transition-delay: 100ms; }
+.av-fs-panel.av-fs-active .av-proc-check-item:nth-child(2) { transition-delay: 210ms; }
+.av-fs-panel.av-fs-active .av-proc-check-item:nth-child(3) { transition-delay: 320ms; }
+
+/* ESOP Advisory "Why EquityList" numbered list (av-wl-row): reference's
+   arrow button reacts to the whole row's group-hover (border-primary,
+   bg-primary, text-primary-foreground) plus the icon's own translate —
+   descendant-hover limitation, same pattern as the other rules here. */
+.av-wl-row:hover .av-wl-arrow { border-color: #5F46FF; background-color: #5F46FF; color: #ffffff; }
+.av-wl-row:hover .av-wl-arrow-icon { transform: translate(2px,-2px); }
+
+/* Secretarial Compliance pricing CTA (av-pr-cta): reference's trailing
+   ArrowRight nudges on the button's own hover — same descendant-hover
+   limitation as .av-cta-btn above. */
+.av-pr-cta:hover .av-pr-cta-icon { transform: translateX(2px); }
+
+/* Dematerialisation Trust & Security strip (av-sec-cert): reference's icon
+   badge border/color reacts to the whole cert item's group-hover, not the
+   icon's own hover — same descendant-hover limitation as .av-why-card above. */
+.av-sec-cert:hover .av-sec-cert-icon { border-color: rgba(95,70,255,0.5); color: #5F46FF; }
+
+/* Dematerialisation eligibility quiz (av-eq-option / av-eq-cta): reference's
+   trailing ArrowRight nudges (and darkens, for the option row) on the whole
+   button's own hover — same descendant-hover limitation as the rules above. */
+.av-eq-option:hover .av-eq-option-arrow { transform: translateX(2px); color: #5F46FF; }
+.av-eq-cta:hover .av-eq-cta-arrow { transform: translateX(2px); }
+
+[data-cert-hover]:hover [data-cert-icon] {
+  border-top-color: rgba(95,70,255,0.5);
+  border-right-color: rgba(95,70,255,0.5);
+  border-bottom-color: rgba(95,70,255,0.5);
+  border-left-color: rgba(95,70,255,0.5);
+  color: #5F46FF;
+}
+[data-cert-link]:hover { color: rgba(255,255,255,0.7); }
+[data-cert-link]:hover [data-cert-arrow] { opacity: 1; }
+
+.el-pill.is-attop .el-trigger,
+.el-pill.is-attop .el-plain-link,
+.el-pill.is-attop .el-signin { color: rgba(255,255,255,0.7) !important; }
+.el-pill:not(.is-attop) .el-trigger,
+.el-pill:not(.is-attop) .el-plain-link,
+.el-pill:not(.is-attop) .el-signin { color: rgba(19,19,20,0.7) !important; }
+
+.el-pill.is-attop .el-trigger:hover,
+.el-pill.is-attop .el-plain-link:hover { background-color: rgba(255,255,255,0.1); color: #ffffff !important; }
+.el-pill.is-attop .el-signin:hover { color: #ffffff !important; }
+.el-pill:not(.is-attop) .el-trigger:hover,
+.el-pill:not(.is-attop) .el-plain-link:hover { background-color: rgba(28,29,31,0.04); color: #131314 !important; }
+.el-pill:not(.is-attop) .el-signin:hover { color: #131314 !important; }
+
+@keyframes lm-scroll { to { transform: translateX(-50%); } }
+.lm-track { animation: lm-scroll 40s linear infinite; }
+
+@keyframes tm-scroll-down { to { transform: translateY(-50%); } }
+@keyframes tm-scroll-up { from { transform: translateY(-50%); } to { transform: translateY(0%); } }
+[data-marquee-vertical]:not([data-reverse="true"]) { animation: tm-scroll-down 32s linear infinite; }
+[data-marquee-vertical][data-reverse="true"] { animation: tm-scroll-up 32s linear infinite; }
+.ctm-t-col:hover [data-marquee-vertical] { animation-play-state: paused; }
+
+/* .ctm-t-mobile-only has no base rule hiding it — it was only ever turned
+   *on* inside the max-width:1023px query below, never turned *off* by
+   default, so on desktop it rendered as an extra 4th grid item stacked
+   directly under column 1, and since it combines ALL testimonials into one
+   list, it read as duplicate/overlapping content. Hidden by default here;
+   the mobile query below still switches it back on under 1024px. */
+.ctm-t-mobile-only { display: none; }
+
+
+
+
+
+@keyframes ph-aurora-a { 0%,100% { transform: translate(-8%,-6%) scale(1); } 50% { transform: translate(6%,8%) scale(1.18); } }
+@keyframes ph-aurora-b { 0%,100% { transform: translate(10%,6%) scale(1.1); } 50% { transform: translate(-8%,-8%) scale(0.94); } }
+.ph-hero-glow-a { animation: ph-aurora-a 22s ease-in-out infinite; }
+.ph-hero-glow-b { animation: ph-aurora-b 27s ease-in-out infinite; }
+
+@keyframes ph-hero-bounce { 0%,100% { transform: translateY(-25%); animation-timing-function: cubic-bezier(0.8,0,1,1); } 50% { transform: translateY(0); animation-timing-function: cubic-bezier(0,0,0.2,1); } }
+.ph-hero-thinking-dot { animation: ph-hero-bounce 1s infinite; }
+.ph-hero-thinking-dot:nth-child(1) { animation-delay: -0.2s; }
+.ph-hero-thinking-dot:nth-child(2) { animation-delay: -0.1s; }
+.ph-hero-thinking-dot:nth-child(3) { animation-delay: 0s; }
+
+@keyframes ph-hero-cursor-pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.5; } }
+.ph-hero-cursor { animation: ph-hero-cursor-pulse 2s cubic-bezier(0.4,0,0.6,1) infinite; }
+
+.blg-card:hover .blg-readmore,
+.blg-featured-card:hover .blg-readmore { color: #4F3AD9; }
+.blg-card:hover .blg-readmore-arrow,
+.blg-featured-card:hover .blg-readmore-arrow { transform: translateX(2px); }
+
+.blg-card:hover .tpl-card-btn-outline { border-color: rgba(95,70,255,0.3); color: #131314; }
+
+.csx-stat-item:hover .csx-stat-bar { background-color: #4F3AD9; }
+.csx-stat-item:hover .csx-stat-textwrap { transform: translateY(-2px); }
+.csx-stat-item .csx-hoverfan-item { transform: translateY(12px) rotate(var(--csx-rot, 0deg)); }
+.csx-stat-item:hover .csx-hoverfan-item { opacity: 1; transform: translateY(var(--csx-rise, 0px)) rotate(var(--csx-rot, 0deg)); }
+.csx-stat-item .csx-mixpanel { transform: translateY(-100%) translateY(12px); }
+.csx-stat-item:hover .csx-mixpanel { opacity: 1; transform: translateY(-100%); }
+
+.abp-angel:hover .abp-angel-img { filter: grayscale(0); }
+
+.bg-noise { position: relative; isolation: isolate; }
+.bg-noise::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.07;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='matrix' values='1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 1 1'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  background-size: 160px 160px;
+}
+
+.bg-dot-fade { position: relative; isolation: isolate; }
+.bg-dot-fade::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: radial-gradient(circle, rgba(28,29,31,0.16) 1px, transparent 1px);
+  background-size: 22px 22px;
+  -webkit-mask-image: linear-gradient(to bottom, transparent, black 18%, black 82%, transparent);
+  mask-image: linear-gradient(to bottom, transparent, black 18%, black 82%, transparent);
+}
+
+.pcp-mobile-row {
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.pcp-mobile-row::-webkit-scrollbar { display: none; }
+.pcp-mobile-card-wrap { scroll-snap-align: center; }
+
+@media (max-width: 1023px) {
+  .abst-scrollspace { height: 180vh; }
+  .abst-sticky {
+    top: 64px;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    display: block;
+    min-height: auto;
+  }
+  .abst-head-wrap { display: none; }
+  .abst-head-mobile-wrap { display: block; }
+  .abst-tracker { margin-top: 32px; }
+  .abst-hex { display: none; }
+  .abst-grid { grid-template-columns: 1fr; }
+  .abst-body-wrap { padding-left: 24px; padding-right: 24px; }
+  .abcq-sticky { padding-left: 24px; padding-right: 24px; }
+
+  .ctm-t-grid { display: block; }
+  .ctm-t-grid > .ctm-t-col:nth-child(-n+3) { display: none; }
+  .ctm-t-mobile-only { display: block; }
+
+  .abh-tags { display: none; }
+
+  .av-fs-driver { display: none; }
+}
+
+@media (min-width: 1024px) {
+  .av-proc-mobile-wrap { display: none; }
+  .av-proc-outer { padding-top: 0; padding-bottom: 0; }
+}
+
+@keyframes scroll-cue { 0% { transform: translateY(0); opacity: 0; } 35% { opacity: 1; } 100% { transform: translateY(14px); opacity: 0; } }
+.animate-scroll-cue { animation: scroll-cue 1.8s ease-in-out infinite; }
+@keyframes float-tag { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+.animate-float-tag { animation: float-tag 5s ease-in-out infinite; }
+
+.abtm-marquee-wrap {
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ph-hero-glow-a, .ph-hero-glow-b, .ph-hero-thinking-dot, .ph-hero-cursor,
+  .lm-track, [data-marquee-vertical], .animate-scroll-cue, .animate-float-tag,
+  .abtm-track { animation: none !important; }
+}
+</style>
+<script data-safe-lenis-library src="https://cdn.jsdelivr.net/npm/lenis@1.3.11/dist/lenis.min.js"></script>
+<script src="../js/7589b3fe-6433d879545aff6081fcc017-689e5ba67671442434f3ca35-6a7c13c529818af471489558-ctabannerfix-0.0.2.js" type="text/javascript"></script><script src="../js/21530b84-6433d879545aff6081fcc017-689e5ba67671442434f3ca35-6a7c13c6b5f318a5c26a88ac-ctachecklistplace-0.0.2.js" type="text/javascript"></script><script src="../js/e3c83266-6433d879545aff6081fcc017-689e5ba67671442434f3ca35-6a7c0eda184d8c3cc629b6c8-rccoredata-0.0.1.js" type="text/javascript"></script><script src="../js/0a1a6e04-6433d879545aff6081fcc017-689e5ba67671442434f3ca35-6a7c0eea7cac282845a9e4a9-rcdownload-0.0.1.js" type="text/javascript"></script><script src="../js/24607d35-6433d879545aff6081fcc017-689e5ba67671442434f3ca35-6a7c0eea87327a934c692418-rcmodalcore-0.0.1.js" type="text/javascript"></script><script src="../js/876ce46a-6433d879545aff6081fcc017-689e5ba67671442434f3ca35-6a7c0ef5bdd85e271608a3d2-rcwireinit-0.0.1.js" type="text/javascript"></script><script src="../js/e1195f06-6433d879545aff6081fcc017-689e5ba67671442434f3ca35-6aa2a94303b7f4b66b30d6a6-navzindexfix-1.0.0.js" type="text/javascript"></script><script type="text/javascript">window.__WEBFLOW_CURRENCY_SETTINGS = {"currencyCode":"USD","symbol":"$","decimal":".","fractionDigits":2,"group":",","template":"{{wf {\"path\":\"symbol\",\"type\":\"PlainText\"} }} {{wf {\"path\":\"amount\",\"type\":\"CommercePrice\"} }} {{wf {\"path\":\"currencyCode\",\"type\":\"PlainText\"} }}","hideDecimalForWholeNumbers":false};</script></head><body><div class="page-wrapper"><div data-wf--nav-2026--variant="base" data-wf-component-id="fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627" data-wf-variant-state="base" class="nav26"><div class="nav26-spacer"></div><div class="nav26-header"><div class="nav26-offset"><div class="notification-bar"><div data-announcement-bar="" class="brix---top-bar-wrapper-3"><div class="brix---top-bar-padding-2"><div class="w-layout-blockcontainer brix---container-default-7 w-container"><div class="text-block-3">Switch from Pulley. We&#x27;ll match your remaining contract.</div><a href="https://www.equitylist.co/pulley-alternative" class="link-block-7 w-inline-block"><div class="text-block-27">Learn more</div><img src="https://cdn.prod.website-files.com/6433d879545aff6081fcc017/6433d879545aff85f6fcc06e_Slide-Arrow-Right.svg" loading="lazy" alt="Arrow" class="image-44"/></a><div data-announcement-close="" role="button" aria-label="Dismiss announcement" tabindex="0" class="brix---top-bar-close-icon-2"><img src="https://cdn.prod.website-files.com/6433d879545aff6081fcc017/64d9e9b455e0d58b02f55baa_icon-rounded-close-icon.svg" loading="lazy" alt="Close notification" class="brix---icon-small-hover-2"/></div></div></div></div></div></div><div class="nav26-shell"><div class="nav26-bar"><div class="nav26-left"><a href="../index.html" class="nav26-logo w-inline-block"><svg fill="currentColor" viewBox="0 0 1318 310" height="23" width="98" role="img" aria-label="EquityList" class="nav26-logo-mark nav26-logo-mark"><path d="M203.03 1.42606e-05L31.0084 1.42606e-05C13.8814 1.42606e-05 0 13.8818 0 31.0091C0 48.1365 13.8814 62.0182 31.0084 62.0182L203.03 62.0182C209.227 62.0264 214.966 63.2527 220.247 65.4846C228.144 68.8201 234.97 74.4693 239.745 81.5492C244.519 88.6454 247.274 97.0006 247.282 106.271L247.282 9.68781C233.777 3.49907 218.751 -0.00816109 203.03 1.42606e-05Z"></path><path d="M309.289 106.263C309.297 91.6784 306.313 77.6168 300.926 64.8877C292.84 45.7738 279.4 29.6111 262.462 18.1656C257.687 14.9363 252.586 12.124 247.28 9.68774L247.28 106.263V136.7L247.28 278.289C247.28 295.416 261.162 309.298 278.289 309.298C295.416 309.298 309.297 295.416 309.297 278.289L309.289 106.263Z"></path><path d="M38.6623 309.139C60.0149 309.139 77.3246 291.83 77.3246 270.48C77.3246 249.129 60.0149 231.821 38.6623 231.821C17.3097 231.821 0 249.129 0 270.48C0 291.83 17.3097 309.139 38.6623 309.139Z"></path><path d="M137.185 229.832C169.214 229.832 195.178 203.867 195.178 171.838C195.178 139.81 169.214 113.845 137.185 113.845C105.156 113.845 79.1914 139.81 79.1914 171.838C79.1914 203.867 105.156 229.832 137.185 229.832Z"></path><path d="M480.608 82.1067L397.081 82.1067V127.289L462.368 127.289V145.529H397.081V190.919H480.608V208.95L379.05 208.95V63.8674L480.608 63.8674V82.1067Z"></path><path d="M553.395 96.6077C571.634 96.6077 586.143 104.345 596.92 119.82V100.131H615.159V245.214H596.927V189.462C586.009 204.937 571.5 212.674 553.401 212.674C537.927 212.674 524.936 206.802 514.434 195.059C504.207 183.866 499.093 170.391 499.093 154.641C499.093 139.025 504.274 125.49 514.635 114.015C524.996 102.406 537.92 96.6078 553.395 96.6077ZM557.126 114.639C546.067 114.639 536.605 118.578 528.733 126.449C524.862 130.456 521.963 134.737 520.03 139.3C518.091 143.857 517.124 148.977 517.124 154.641C517.124 165.418 520.989 174.82 528.733 182.832C536.471 190.57 545.939 194.442 557.126 194.442C568.178 194.442 577.506 190.576 585.109 182.832C592.988 174.954 596.92 165.559 596.92 154.641C596.927 143.729 592.988 134.328 585.109 126.449C577.372 118.571 568.044 114.639 557.126 114.639Z"></path><path d="M651.685 165.425C651.685 173.579 654.584 180.417 660.389 185.947C666.052 191.617 672.823 194.442 680.701 194.442C688.714 194.442 695.552 191.611 701.223 185.947C706.886 180.283 709.718 173.444 709.718 165.425V100.138H727.957V208.951H709.718V196.724C701.148 207.367 690.304 212.681 677.179 212.681C664.878 212.681 654.449 207.843 645.88 198.173C637.727 189.054 633.653 178.142 633.653 165.425V100.138H651.685V165.425Z"></path><path d="M768.201 208.945H750.17V100.132H768.201V208.945ZM759.088 60.3381C762.678 60.3381 765.718 61.5463 768.208 63.9622C770.697 66.3779 771.938 69.384 771.938 72.9739C771.932 76.5774 770.691 79.5776 768.208 81.9934C765.718 84.4092 762.678 85.6174 759.088 85.6174C755.491 85.6174 752.492 84.409 750.076 81.9934C747.654 79.5776 746.445 76.5708 746.445 72.9739C746.445 69.3838 747.654 66.3779 750.076 63.9622C752.492 61.5464 755.498 60.3382 759.088 60.3381Z"></path><path d="M928.23 184.914L962.427 100.146H982.117L928.861 231.761C924.304 243.229 915.802 248.96 903.368 248.96C901.019 248.96 897.979 248.335 894.248 247.094V228.855C897.979 230.096 901.019 230.721 903.368 230.721C907.649 230.721 910.413 229.063 911.655 225.748L918.494 208.958L874.552 100.146H894.033L928.23 184.914Z"></path><path d="M1018.22 190.919H1083.51V208.95H1000.19V63.8674H1018.22V190.919Z"></path><path d="M1124.02 208.945H1105.99V100.132H1124.02V208.945ZM1114.91 60.3381C1118.5 60.3381 1121.54 61.5463 1124.03 63.9622C1126.52 66.3779 1127.76 69.384 1127.76 72.9739C1127.75 76.5774 1126.51 79.5776 1124.03 81.9934C1121.54 84.4092 1118.5 85.6174 1114.91 85.6174C1111.31 85.6174 1108.31 84.409 1105.9 81.9934C1103.48 79.5776 1102.27 76.5708 1102.27 72.9739C1102.27 69.3838 1103.48 66.3779 1105.9 63.9622C1108.31 61.5464 1111.32 60.3382 1114.91 60.3381Z"></path><path d="M1189.06 96.6077C1199.98 96.6077 1209.65 99.372 1218.08 104.895C1227.75 111.25 1232.58 119.612 1232.58 129.973H1214.34C1214.34 124.584 1211.3 120.511 1205.23 117.746C1200.8 115.673 1195.41 114.639 1189.06 114.639C1182.7 114.639 1177.25 115.673 1172.69 117.746C1166.61 120.511 1163.56 124.584 1163.56 129.973C1163.57 137.301 1169.71 142.132 1182.01 144.481C1192.79 146.695 1200.98 148.386 1206.57 149.561C1212.17 150.735 1215.31 151.46 1216 151.736C1228.16 156.433 1234.24 165.552 1234.24 179.094C1234.25 189.737 1229.2 198.24 1219.12 204.595C1214.69 207.225 1210.03 209.225 1205.12 210.608C1200.22 211.99 1194.86 212.681 1189.06 212.681C1183.25 212.681 1177.87 211.99 1172.89 210.608C1167.92 209.225 1163.22 207.225 1158.8 204.595C1148.72 198.24 1143.67 189.744 1143.67 179.101H1161.7C1161.7 184.905 1165.08 189.12 1171.85 191.743C1176 193.542 1181.73 194.435 1189.06 194.435C1207.16 194.435 1216.21 189.328 1216.21 179.094C1216.21 171.914 1210.13 167.143 1197.97 164.794C1187.19 162.586 1179.01 160.888 1173.41 159.714C1167.81 158.54 1164.6 157.816 1163.77 157.54C1151.61 152.843 1145.53 143.656 1145.53 129.973C1145.53 119.471 1150.37 111.109 1160.04 104.895C1168.2 99.3721 1177.87 96.6077 1189.06 96.6077Z"></path><path d="M828.709 103.968L856.377 103.968V121.449L828.709 121.449V177.824C828.709 182.958 829.715 186.595 831.722 188.742C833.728 190.896 836.822 192.004 840.982 192.072C845.143 192.145 850.27 192.038 856.377 191.756V207.983C840.567 210.063 828.984 208.781 821.636 204.137C814.281 199.493 810.61 190.715 810.61 177.818V121.443H790.016V103.968H810.61V80.2532L828.709 74.844V103.968Z"></path><path d="M1289.43 103.968L1317.1 103.968V121.449L1289.43 121.449V177.824C1289.43 182.958 1290.44 186.595 1292.44 188.742C1294.45 190.897 1297.55 192.004 1301.71 192.072C1305.87 192.145 1310.99 192.038 1317.1 191.756V207.983C1301.29 210.063 1289.71 208.781 1282.36 204.137C1275 199.493 1271.33 190.715 1271.33 177.818V121.443H1250.74V103.968H1271.33V80.2532L1289.43 74.844V103.968Z"></path></svg></a><div class="nav26-links"><div class="nav26-trigger nav26-tg-products">Products<svg fill="currentColor" viewBox="0 0 256 256" height="14" width="14" class="nav26-caret nav26-caret-products nav26-caret nav26-caret-products"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path></svg></div><div class="nav26-trigger nav26-tg-solutions">Solutions<svg fill="currentColor" viewBox="0 0 256 256" height="14" width="14" class="nav26-caret nav26-caret-solutions nav26-caret nav26-caret-solutions"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path></svg></div><div class="nav26-trigger nav26-tg-resources">Resources<svg fill="currentColor" viewBox="0 0 256 256" height="14" width="14" class="nav26-caret nav26-caret-resources nav26-caret nav26-caret-resources"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path></svg></div><a href="../pricing/index.html" class="nav26-trigger nav26-tg-pricing">Pricing</a><div class="nav26-trigger nav26-tg-company">Company<svg fill="currentColor" viewBox="0 0 256 256" height="14" width="14" class="nav26-caret nav26-caret-company nav26-caret nav26-caret-company"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path></svg></div></div></div><div class="nav26-right"><div class="nav26-actions"><a href="https://app.equitylist.co/login" class="nav26-signin">Sign In</a><a href="../contact/index.html" class="nav26-demo">Book a Demo</a><a href="https://app.equitylist.co/get-started" class="nav26-start">Get Started</a></div><div class="nav26-burger"><svg fill="currentColor" viewBox="0 0 256 256" height="19" width="19" class="nav26-ic-list nav26-ic-list"><path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"></path></svg><svg fill="currentColor" viewBox="0 0 256 256" height="19" width="19" class="nav26-ic-x nav26-ic-x"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"></path></svg></div></div></div><div class="nav26-dd"><div class="nav26-card"><div class="nav26-panel nav26-p-products"><div class="nav26-col"><div class="nav26-eyebrow">Core</div><div class="nav26-list"><a href="https://www.equitylist.co/products/captable-management" data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a7965f&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" class="nav26-mi w-inline-block"><div data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79660&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" class="nav26-mi-ic"><svg fill="currentColor" viewBox="0 0 256 256" height="19" width="19" class="nav26-mi-svg nav26-mi-svg"><path d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48ZM40,112H80v32H40Zm56,0H216v32H96ZM216,64V96H40V64ZM40,160H80v32H40Zm176,32H96V160H216v32Z"></path></svg></div><div class="nav26-mi-body"><div class="nav26-mi-row"><div class="nav26-mi-label">Cap table management</div><svg data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79667&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" stroke-linejoin="round" stroke-linecap="round" stroke-width="2.25" stroke="currentColor" fill="none" viewBox="0 0 24 24" height="15" width="15" class="nav26-arrow nav26-arrow"><path d="M18 8L22 12L18 16"></path><path d="M5.2 12H22"></path></svg></div><div class="nav26-mi-desc">Real-time ownership clarity.</div></div></a><a href="https://www.equitylist.co/products/stocks-option-management" data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a7966c&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" class="nav26-mi w-inline-block"><div data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a7966d&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" class="nav26-mi-ic"><svg fill="currentColor" viewBox="0 0 256 256" height="19" width="19" class="nav26-mi-svg nav26-mi-svg"><path d="M128,136a8,8,0,0,1-8,8H72a8,8,0,0,1,0-16h48A8,8,0,0,1,128,136Zm-8-40H72a8,8,0,0,0,0,16h48a8,8,0,0,0,0-16Zm112,65.47V224A8,8,0,0,1,220,231l-24-13.74L172,231A8,8,0,0,1,160,224V200H40a16,16,0,0,1-16-16V56A16,16,0,0,1,40,40H216a16,16,0,0,1,16,16V86.53a51.88,51.88,0,0,1,0,74.94ZM160,184V161.47A52,52,0,0,1,216,76V56H40V184Zm56-12a51.88,51.88,0,0,1-40,0v38.22l16-9.16a8,8,0,0,1,7.94,0l16,9.16Zm16-48a36,36,0,1,0-36,36A36,36,0,0,0,232,124Z"></path></svg></div><div class="nav26-mi-body"><div class="nav26-mi-row"><div class="nav26-mi-label">Equity grants</div><svg data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79674&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" stroke-linejoin="round" stroke-linecap="round" stroke-width="2.25" stroke="currentColor" fill="none" viewBox="0 0 24 24" height="15" width="15" class="nav26-arrow nav26-arrow"><path d="M18 8L22 12L18 16"></path><path d="M5.2 12H22"></path></svg></div><div class="nav26-mi-desc">Automate options, RSUs, and SARs, from grant to exercise.</div></div></a><a href="../products/shareholder-management/index.html" data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79679&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" class="nav26-mi w-inline-block"><div data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a7967a&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" class="nav26-mi-ic"><svg fill="currentColor" viewBox="0 0 256 256" height="19" width="19" class="nav26-mi-svg nav26-mi-svg"><path d="M117.25,157.92a60,60,0,1,0-66.5,0A95.83,95.83,0,0,0,3.53,195.63a8,8,0,1,0,13.4,8.74,80,80,0,0,1,134.14,0,8,8,0,0,0,13.4-8.74A95.83,95.83,0,0,0,117.25,157.92ZM40,108a44,44,0,1,1,44,44A44.05,44.05,0,0,1,40,108Zm210.14,98.7a8,8,0,0,1-11.07-2.33A79.83,79.83,0,0,0,172,168a8,8,0,0,1,0-16,44,44,0,1,0-16.34-84.87,8,8,0,1,1-5.940-14.85,60,60,0,0,1,55.53,105.64,95.83,95.830,0,0,1,47.22,37.71A8,8,0,0,1,250.14,206.7Z"></path></svg></div><div class="nav26-mi-body"><div class="nav26-mi-row"><div class="nav26-mi-label">Shareholder management</div><svg data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79681&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" stroke-linejoin="round" stroke-linecap="round" stroke-width="2.25" stroke="currentColor" fill="none" viewBox="0 0 24 24" height="15" width="15" class="nav26-arrow nav26-arrow"><path d="M18 8L22 12L18 16"></path><path d="M5.2 12H22"></path></svg></div><div class="nav26-mi-desc">Keep every stakeholder in sync.</div></div></a></div></div><div class="nav26-col nav26-col-line"><div class="nav26-eyebrow">Add-ons <!-- -->&amp;<!-- --> services</div><div class="nav26-list"><a href="../409a-valuation/index.html" data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a7968c&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" class="nav26-mi w-inline-block"><div data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a7968d&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" class="nav26-mi-ic"><svg fill="currentColor" viewBox="0 0 256 256" height="19" width="19" class="nav26-mi-svg nav26-mi-svg"><path d="M72,104a8,8,0,0,1,8-8h96a8,8,0,0,1,0,16H80A8,8,0,0,1,72,104Zm8,40h96a8,8,0,0,0,0-16H80a8,8,0,0,0,0,16ZM232,56V208a8,8,0,0,1-11.58,7.15L192,200.94l-28.42,14.21a8,8,0,0,1-7.16,0L128,200.94,99.58,215.15a8,8,0,0,1-7.16,0L64,200.94,35.58,215.15A8,8,0,0,1,24,208V56A16,16,0,0,1,40,40H216A16,16,0,0,1,232,56Zm-16,0H40V195.06l20.42-10.22a8,8,0,0,1,7.16,0L96,199.06l28.42-14.22a8,8,0,0,1,7.16,0L160,199.06l28.42-14.22a8,8,0,0,1,7.16,0L216,195.06Z"></path></svg></div><div class="nav26-mi-body"><div class="nav26-mi-row"><div class="nav26-mi-label">409A <!-- -->&amp;<!-- --> valuations</div><svg data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79696&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" stroke-linejoin="round" stroke-linecap="round" stroke-width="2.25" stroke="currentColor" fill="none" viewBox="0 0 24 24" height="15" width="15" class="nav26-arrow nav26-arrow"><path d="M18 8L22 12L18 16"></path><path d="M5.2 12H22"></path></svg></div><div class="nav26-mi-desc">Audit-ready FMV for option grants.</div></div></a><a href="../esop-advisory/index.html" data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a7969b&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" class="nav26-mi w-inline-block"><div data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a7969c&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" class="nav26-mi-ic"><svg fill="currentColor" viewBox="0 0 256 256" height="19" width="19" class="nav26-mi-svg nav26-mi-svg"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216ZM172.42,72.84l-64,32a8.05,8.05,0,0,0-3.58,3.58l-32,64A8,8,0,0,0,80,184a8.1,8.1,0,0,0,3.58-.84l64-32a8.05,8.05,0,0,0,3.580-3.58l32-64a8,8,0,0,0-10.74-10.74ZM138,138,97.89,158.11,118,118l40.15-20.07Z"></path></svg></div><div class="nav26-mi-body"><div class="nav26-mi-row"><div class="nav26-mi-label">Equity advisory</div><svg data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a796a3&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" stroke-linejoin="round" stroke-linecap="round" stroke-width="2.25" stroke="currentColor" fill="none" viewBox="0 0 24 24" height="15" width="15" class="nav26-arrow nav26-arrow"><path d="M18 8L22 12L18 16"></path><path d="M5.2 12H22"></path></svg></div><div class="nav26-mi-desc">Equity award plans designed for your team.</div></div></a><a href="../secretarial-compliance/index.html" data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a796a8&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" class="nav26-mi w-inline-block"><div data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a796a9&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" class="nav26-mi-ic"><svg fill="currentColor" viewBox="0 0 256 256" height="19" width="19" class="nav26-mi-svg nav26-mi-svg"><path d="M168,152a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,152Zm-8-40H96a8,8,0,0,0,0,16h64a8,8,0,0,0,0-16Zm56-64V216a16,16,0,0,1-16,16H56a16,16,0,0,1-16-16V48A16,16,0,0,1,56,32H92.26a47.92,47.92,0,0,1,71.48,0H200A16,16,0,0,1,216,48ZM96,64h64a32,32,0,0,0-64,0ZM200,48H173.25A47.93,47.93,0,0,1,176,64v8a8,8,0,0,1-8,8H88a8,8,0,0,1-8-8V64a47.93,47.93,0,0,1,2.75-16H56V216H200Z"></path></svg></div><div class="nav26-mi-body"><div class="nav26-mi-row"><div class="nav26-mi-label">Secretarial compliance</div><svg data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a796b0&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" stroke-linejoin="round" stroke-linecap="round" stroke-width="2.25" stroke="currentColor" fill="none" viewBox="0 0 24 24" height="15" width="15" class="nav26-arrow nav26-arrow"><path d="M18 8L22 12L18 16"></path><path d="M5.2 12H22"></path></svg></div><div class="nav26-mi-desc">Stay on top of statutory deadlines.</div></div></a><a href="../products/dematerialisation-of-shares/index.html" data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a796b5&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" class="nav26-mi w-inline-block"><div data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a796b6&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" class="nav26-mi-ic"><svg fill="currentColor" viewBox="0 0 256 256" height="19" width="19" class="nav26-mi-svg nav26-mi-svg"><path d="M224,48V96a8,8,0,0,1-8,8H168a8,8,0,0,1,0-16h28.69L182.06,73.37a79.56,79.56,0,0,0-56.13-23.43h-.45A79.52,79.52,0,0,0,69.59,72.71,8,8,0,0,1,58.41,61.27a96,96,0,0,1,135,.79L208,76.69V48a8,8,0,0,1,16,0ZM186.41,183.29a80,80,0,0,1-112.47-.66L59.31,168H88a8,8,0,0,0,0-16H40a8,8,0,0,0-8,8v48a8,8,0,0,0,16,0V179.31l14.63,14.63A95.43,95.43,0,0,0,130,222.06h.53a95.36,95.36,0,0,0,67.07-27.33,8,8,0,0,0-11.18-11.44Z"></path></svg></div><div class="nav26-mi-body"><div class="nav26-mi-row"><div class="nav26-mi-label">Dematerialization</div><svg data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a796bd&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" stroke-linejoin="round" stroke-linecap="round" stroke-width="2.25" stroke="currentColor" fill="none" viewBox="0 0 24 24" height="15" width="15" class="nav26-arrow nav26-arrow"><path d="M18 8L22 12L18 16"></path><path d="M5.2 12H22"></path></svg></div><div class="nav26-mi-desc">Digitize your shares, reduce paperwork.</div></div></a></div></div><div class="nav26-col nav26-col-line nav26-col-feat"><div class="nav26-eyebrow">Featured</div><a href="../y-combinator/index.html" data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a796c5&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" class="nav26-fc nav26-fc-cases w-inline-block"><div class="nav26-fan-slot"><div class="nav26-fan"><div data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a796c8&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" class="nav26-tile nav26-tile-ycel"><img src="https://cdn.prod.website-files.com/6433d879545aff6081fcc017/6abf4f7cdfa4f37d1a09847e_nav-yc-tile-el.png" loading="lazy" alt="" class="nav26-tile-img nav26-img-cover"/></div><div data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a796cc&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" class="nav26-tile nav26-tile-ycy"><img src="https://cdn.prod.website-files.com/6433d879545aff6081fcc017/6abf4f7d8ca055ddb593060a_nav-yc-tile-y.png" loading="lazy" alt="" class="nav26-tile-img nav26-img-cover"/></div></div></div><div class="nav26-fc-text nav26-fc-pad"><div class="nav26-fc-title">For YC startups<svg data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a796d1&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" stroke-linejoin="round" stroke-linecap="round" stroke-width="2.25" stroke="currentColor" fill="none" viewBox="0 0 24 24" height="15" width="15" class="nav26-arrow nav26-arrow"><path d="M18 8L22 12L18 16"></path><path d="M5.2 12H22"></path></svg></div><div class="nav26-fc-desc">50% off year one, with free migration from Pulley or Carta.</div></div></a></div></div><div class="nav26-panel nav26-p-solutions"><div class="nav26-col"><div class="nav26-eyebrow">By stage</div><div class="nav26-list"><a href="../private-companies/index.html" data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a796db&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" class="nav26-mi w-inline-block"><div data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a796dc&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" class="nav26-mi-ic"><svg fill="currentColor" viewBox="0 0 256 256" height="19" width="19" class="nav26-mi-svg nav26-mi-svg"><path d="M232,224H208V32h8a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16h8V224H24a8,8,0,0,0,0,16H232a8,8,0,0,0,0-16ZM64,32H192V224H160V184a8,8,0,0,0-8-8H104a8,8,0,0,0-8,8v40H64Zm80,192H112V192h32ZM88,64a8,8,0,0,1,8-8h16a8,8,0,0,1,0,16H96A8,8,0,0,1,88,64Zm48,0a8,8,0,0,1,8-8h16a8,8,0,0,1,0,16H144A8,8,0,0,1,136,64ZM88,104a8,8,0,0,1,8-8h16a8,8,0,0,1,0,16H96A8,8,0,0,1,88,104Zm48,0a8,8,0,0,1,8-8h16a8,8,0,0,1,0,16H144A8,8,0,0,1,136,104ZM88,144a8,8,0,0,1,8-8h16a8,8,0,0,1,0,16H96A8,8,0,0,1,88,144Zm48,0a8,8,0,0,1,8-8h16a8,8,0,0,1,0,16H144A8,8,0,0,1,136,144Z"></path></svg></div><div class="nav26-mi-body"><div class="nav26-mi-row"><div class="nav26-mi-label">Startups <!-- -->&amp;<!-- --> private companies</div><svg data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a796e5&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" stroke-linejoin="round" stroke-linecap="round" stroke-width="2.25" stroke="currentColor" fill="none" viewBox="0 0 24 24" height="15" width="15" class="nav26-arrow nav26-arrow"><path d="M18 8L22 12L18 16"></path><path d="M5.2 12H22"></path></svg></div><div class="nav26-mi-desc">Scale-ready cap tables and equity awards.</div></div></a><a href="https://www.equitylist.co/india/public-listed-esop-software" data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a796ea&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" class="nav26-mi w-inline-block"><div data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a796eb&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" class="nav26-mi-ic"><svg fill="currentColor" viewBox="0 0 256 256" height="19" width="19" class="nav26-mi-svg nav26-mi-svg"><path d="M240,208H224V96a16,16,0,0,0-16-16H144V32a16,16,0,0,0-24.88-13.32L39.12,72A16,16,0,0,0,32,85.34V208H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16ZM208,96V208H144V96ZM48,85.34,128,32V208H48ZM112,112v16a8,8,0,0,1-16,0V112a8,8,0,1,1,16,0Zm-32,0v16a8,8,0,0,1-16,0V112a8,8,0,1,1,16,0Zm0,56v16a8,8,0,0,1-16,0V168a8,8,0,0,1,16,0Zm32,0v16a8,8,0,0,1-16,0V168a8,8,0,0,1,16,0Z"></path></svg></div><div class="nav26-mi-body"><div class="nav26-mi-row"><div class="nav26-mi-label">Public <!-- -->&amp;<!-- --> enterprise</div><svg data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a796f4&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" stroke-linejoin="round" stroke-linecap="round" stroke-width="2.25" stroke="currentColor" fill="none" viewBox="0 0 24 24" height="15" width="15" class="nav26-arrow nav26-arrow"><path d="M18 8L22 12L18 16"></path><path d="M5.2 12H22"></path></svg></div><div class="nav26-mi-desc">Payment <!-- -->&amp;<!-- --> Trust workflows for listed companies.</div></div></a></div></div><div class="nav26-col nav26-col-line"><div class="nav26-eyebrow">By team</div><div class="nav26-list"><a href="../solutions/founder/index.html" data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a796ff&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" class="nav26-mi w-inline-block"><div data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79700&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" class="nav26-mi-ic"><svg fill="currentColor" viewBox="0 0 256 256" height="19" width="19" class="nav26-mi-svg nav26-mi-svg"><path d="M248,80a28,28,0,1,0-51.12,15.77l-26.79,33L146,73.4a28,28,0,1,0-36.06,0L85.91,128.74l-26.79-33a28,28,0,1,0-26.6,12L47,194.63A16,16,0,0,0,62.78,208H193.22A16,16,0,0,0,209,194.63l14.47-86.85A28,28,0,0,0,248,80ZM128,40a12,12,0,1,1-12,12A12,12,0,0,1,128,40ZM24,80A12,12,0,1,1,36,92,12,12,0,0,1,24,80ZM193.22,192H62.78L48.86,108.52,81.79,149A8,8,0,0,0,88,152a7.83,7.83,0,0,0,1.08-.07,8,8,0,0,0,6.26-4.74l29.3-67.4a27,27,0,0,0,6.72,0l29.3,67.4a8,8,0,0,0,6.26,4.74A7.83,7.83,0,0,0,168,152a8,8,0,0,0,6.21-3l32.93-40.52ZM220,92a12,12,0,1,1,12-12A12,12,0,0,1,220,92Z"></path></svg></div><div class="nav26-mi-body"><div class="nav26-mi-row"><div class="nav26-mi-label">Founders <!-- -->&amp;<!-- --> CEOs</div><svg data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79709&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" stroke-linejoin="round" stroke-linecap="round" stroke-width="2.25" stroke="currentColor" fill="none" viewBox="0 0 24 24" height="15" width="15" class="nav26-arrow nav26-arrow"><path d="M18 8L22 12L18 16"></path><path d="M5.2 12H22"></path></svg></div><div class="nav26-mi-desc">Grant, track, and scale equity with confidence.</div></div></a><a href="../solutions/finance/index.html" data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a7970e&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" class="nav26-mi w-inline-block"><div data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a7970f&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" class="nav26-mi-ic"><svg fill="currentColor" viewBox="0 0 256 256" height="19" width="19" class="nav26-mi-svg nav26-mi-svg"><path d="M232,208a8,8,0,0,1-8,8H32a8,8,0,0,1-8-8V48a8,8,0,0,1,16,0v94.37L90.73,98a8,8,0,0,1,10.07-.38l58.81,44.11L218.73,90a8,8,0,1,1,10.54,12l-64,56a8,8,0,0,1-10.07.38L96.39,114.29,40,163.63V200H224A8,8,0,0,1,232,208Z"></path></svg></div><div class="nav26-mi-body"><div class="nav26-mi-row"><div class="nav26-mi-label">Finance</div><svg data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79716&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" stroke-linejoin="round" stroke-linecap="round" stroke-width="2.25" stroke="currentColor" fill="none" viewBox="0 0 24 24" height="15" width="15" class="nav26-arrow nav26-arrow"><path d="M18 8L22 12L18 16"></path><path d="M5.2 12H22"></path></svg></div><div class="nav26-mi-desc">Accurate equity data for audits and reporting.</div></div></a><a href="../solutions/hr/index.html" data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a7971b&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" class="nav26-mi w-inline-block"><div data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a7971c&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" class="nav26-mi-ic"><svg fill="currentColor" viewBox="0 0 256 256" height="19" width="19" class="nav26-mi-svg nav26-mi-svg"><path d="M244.8,150.4a8,8,0,0,1-11.2-1.6A51.6,51.6,0,0,0,192,128a8,8,0,0,1-7.37-4.89,8,8,0,0,1,0-6.22A8,8,0,0,1,192,112a24,24,0,1,0-23.24-30,8,8,0,1,1-15.5-4A40,40,0,1,1,219,117.51a67.94,67.94,0,0,1,27.43,21.68A8,8,0,0,1,244.8,150.4ZM190.92,212a8,8,0,1,1-13.84,8,57,57,0,0,0-98.16,0,8,8,0,1,1-13.84-8,72.06,72.06,0,0,1,33.74-29.92,48,48,0,1,1,58.36,0A72.06,72.06,0,0,1,190.92,212ZM128,176a32,32,0,1,0-32-32A32,32,0,0,0,128,176ZM72,120a8,8,0,0,0-8-8A24,24,0,1,1,87.24,82a8,8,0,1,0,15.5-4A40,40,0,1,0,37,117.51,67.94,67.94,0,0,0,9.6,139.19a8,8,0,1,0,12.8,9.61A51.6,51.6,0,0,1,64,128,8,8,0,0,0,72,120Z"></path></svg></div><div class="nav26-mi-body"><div class="nav26-mi-row"><div class="nav26-mi-label">People <!-- -->&amp;<!-- --> HR</div><svg data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79725&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" stroke-linejoin="round" stroke-linecap="round" stroke-width="2.25" stroke="currentColor" fill="none" viewBox="0 0 24 24" height="15" width="15" class="nav26-arrow nav26-arrow"><path d="M18 8L22 12L18 16"></path><path d="M5.2 12H22"></path></svg></div><div class="nav26-mi-desc">Simple, seamless equity for employees.</div></div></a></div></div><div class="nav26-col nav26-col-line nav26-col-feat"><div class="nav26-eyebrow">Featured</div><a href="../y-combinator/index.html" data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a7972d&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" class="nav26-fc nav26-fc-cases w-inline-block"><div class="nav26-fan-slot"><div class="nav26-fan"><div data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79730&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" class="nav26-tile nav26-tile-ycel"><img src="https://cdn.prod.website-files.com/6433d879545aff6081fcc017/6abf4f7cdfa4f37d1a09847e_nav-yc-tile-el.png" loading="lazy" alt="" class="nav26-tile-img nav26-img-cover"/></div><div data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79734&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" class="nav26-tile nav26-tile-ycy"><img src="https://cdn.prod.website-files.com/6433d879545aff6081fcc017/6abf4f7d8ca055ddb593060a_nav-yc-tile-y.png" loading="lazy" alt="" class="nav26-tile-img nav26-img-cover"/></div></div></div><div class="nav26-fc-text nav26-fc-pad"><div class="nav26-fc-title">For YC startups<svg data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79739&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" stroke-linejoin="round" stroke-linecap="round" stroke-width="2.25" stroke="currentColor" fill="none" viewBox="0 0 24 24" height="15" width="15" class="nav26-arrow nav26-arrow"><path d="M18 8L22 12L18 16"></path><path d="M5.2 12H22"></path></svg></div><div class="nav26-fc-desc">50% off year one, with free migration from Pulley or Carta.</div></div></a></div></div><div class="nav26-panel nav26-p-resources"><div class="nav26-col"><div class="nav26-list"><a href="../blog/index.html" data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79741&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" class="nav26-mi w-inline-block"><div data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79742&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" class="nav26-mi-ic"><svg fill="currentColor" viewBox="0 0 256 256" height="19" width="19" class="nav26-mi-svg nav26-mi-svg"><path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,160H40V56H216V200ZM184,96a8,8,0,0,1-8,8H80a8,8,0,0,1,0-16h96A8,8,0,0,1,184,96Zm0,32a8,8,0,0,1-8,8H80a8,8,0,0,1,0-16h96A8,8,0,0,1,184,128Zm0,32a8,8,0,0,1-8,8H80a8,8,0,0,1,0-16h96A8,8,0,0,1,184,160Z"></path></svg></div><div class="nav26-mi-body"><div class="nav26-mi-row"><div class="nav26-mi-label">Blog</div><svg data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79749&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" stroke-linejoin="round" stroke-linecap="round" stroke-width="2.25" stroke="currentColor" fill="none" viewBox="0 0 24 24" height="15" width="15" class="nav26-arrow nav26-arrow"><path d="M18 8L22 12L18 16"></path><path d="M5.2 12H22"></path></svg></div><div class="nav26-mi-desc">Expert insights <!-- -->&amp;<!-- --> news on equity management.</div></div></a><a href="../product-updates/index.html" data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79750&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" class="nav26-mi w-inline-block"><div data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79751&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" class="nav26-mi-ic"><svg fill="currentColor" viewBox="0 0 256 256" height="19" width="19" class="nav26-mi-svg nav26-mi-svg"><path d="M223.68,66.15,135.68,18a15.88,15.88,0,0,0-15.36,0l-88,48.17a16,16,0,0,0-8.32,14v95.64a16,16,0,0,0,8.32,14l88,48.17a15.88,15.88,0,0,0,15.36,0l88-48.17a16,16,0,0,0,8.32-14V80.18A16,16,0,0,0,223.68,66.15ZM128,32l80.34,44-29.77,16.3-80.35-44ZM128,120,47.66,76l33.9-18.56,80.34,44ZM40,90l80,43.78v85.79L40,175.82Zm176,85.78h0l-80,43.79V133.82l32-17.51V152a8,8,0,0,0,16,0V107.55L216,90v85.77Z"></path></svg></div><div class="nav26-mi-body"><div class="nav26-mi-row"><div class="nav26-mi-label">Product Updates</div><svg data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79758&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" stroke-linejoin="round" stroke-linecap="round" stroke-width="2.25" stroke="currentColor" fill="none" viewBox="0 0 24 24" height="15" width="15" class="nav26-arrow nav26-arrow"><path d="M18 8L22 12L18 16"></path><path d="M5.2 12H22"></path></svg></div><div class="nav26-mi-desc">What&#x27;s new on the platform.</div></div></a><a href="../pulley-alternative/index.html" data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a7975d&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" class="nav26-mi w-inline-block"><div data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a7975e&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" class="nav26-mi-ic"><svg fill="currentColor" viewBox="0 0 256 256" height="19" width="19" class="nav26-mi-svg nav26-mi-svg"><path d="M224,48V152a16,16,0,0,1-16,16H99.31l10.35,10.34a8,8,0,0,1-11.32,11.32l-24-24a8,8,0,0,1,0-11.32l24-24a8,8,0,0,1,11.32,11.32L99.31,152H208V48H96v8a8,8,0,0,1-16,0V48A16,16,0,0,1,96,32H208A16,16,0,0,1,224,48ZM168,192a8,8,0,0,0-8,8v8H48V104H156.69l-10.35,10.34a8,8,0,0,0,11.32,11.32l24-24a8,8,0,0,0,0-11.32l-24-24a8,8,0,0,0-11.32,11.32L156.69,88H48a16,16,0,0,0-16,16V208a16,16,0,0,0,16,16H160a16,16,0,0,0,16-16v-8A8,8,0,0,0,168,192Z"></path></svg></div><div class="nav26-mi-body"><div class="nav26-mi-row"><div class="nav26-mi-label">EquityList vs Pulley</div><svg data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79765&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" stroke-linejoin="round" stroke-linecap="round" stroke-width="2.25" stroke="currentColor" fill="none" viewBox="0 0 24 24" height="15" width="15" class="nav26-arrow nav26-arrow"><path d="M18 8L22 12L18 16"></path><path d="M5.2 12H22"></path></svg></div><div class="nav26-mi-desc">What teams migrating from Pulley get with EquityList</div></div></a><a href="../templates/index.html" data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a7976a&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" class="nav26-mi w-inline-block"><div data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a7976b&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" class="nav26-mi-ic"><svg fill="currentColor" viewBox="0 0 256 256" height="19" width="19" class="nav26-mi-svg nav26-mi-svg"><path d="M213.66,66.34l-40-40A8,8,0,0,0,168,24H88A16,16,0,0,0,72,40V56H56A16,16,0,0,0,40,72V216a16,16,0,0,0,16,16H168a16,16,0,0,0,16-16V200h16a16,16,0,0,0,16-16V72A8,8,0,0,0,213.66,66.34ZM168,216H56V72h76.69L168,107.31v84.53c0,.06,0,.11,0,.16s0,.1,0,.16V216Zm32-32H184V104a8,8,0,0,0-2.34-5.66l-40-40A8,8,0,0,0,136,56H88V40h76.69L200,75.31Zm-56-32a8,8,0,0,1-8,8H88a8,8,0,0,1,0-16h48A8,8,0,0,1,144,152Zm0,32a8,8,0,0,1-8,8H88a8,8,0,0,1,0-16h48A8,8,0,0,1,144,184Z"></path></svg></div><div class="nav26-mi-body"><div class="nav26-mi-row"><div class="nav26-mi-label">Templates</div><svg data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79772&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" stroke-linejoin="round" stroke-linecap="round" stroke-width="2.25" stroke="currentColor" fill="none" viewBox="0 0 24 24" height="15" width="15" class="nav26-arrow nav26-arrow"><path d="M18 8L22 12L18 16"></path><path d="M5.2 12H22"></path></svg></div><div class="nav26-mi-desc">Ready-to-use equity docs and spreadsheet, free to download.</div></div></a></div></div><div class="nav26-col nav26-col-line"><div class="nav26-list"><a href="../customer-stories/index.html" data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79779&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" class="nav26-mi w-inline-block"><div data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a7977a&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" class="nav26-mi-ic"><svg fill="currentColor" viewBox="0 0 256 256" height="19" width="19" class="nav26-mi-svg nav26-mi-svg"><path d="M224,200h-8V40a8,8,0,0,0-8-8H152a8,8,0,0,0-8,8V80H96a8,8,0,0,0-8,8v40H48a8,8,0,0,0-8,8v64H32a8,8,0,0,0,0,16H224a8,8,0,0,0,0-16ZM160,48h40V200H160ZM104,96h40V200H104ZM56,144H88v56H56Z"></path></svg></div><div class="nav26-mi-body"><div class="nav26-mi-row"><div class="nav26-mi-label">Case studies</div><svg data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79781&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" stroke-linejoin="round" stroke-linecap="round" stroke-width="2.25" stroke="currentColor" fill="none" viewBox="0 0 24 24" height="15" width="15" class="nav26-arrow nav26-arrow"><path d="M18 8L22 12L18 16"></path><path d="M5.2 12H22"></path></svg></div><div class="nav26-mi-desc">How teams run equity like specialists.</div></div></a><a href="../roi-calculator/index.html" data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79786&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" class="nav26-mi w-inline-block"><div data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79787&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" class="nav26-mi-ic"><svg fill="currentColor" viewBox="0 0 256 256" height="19" width="19" class="nav26-mi-svg nav26-mi-svg"><path d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48ZM40,112H80v32H40Zm56,0H216v32H96ZM216,64V96H40V64ZM40,160H80v32H40Zm176,32H96V160H216v32Z"></path></svg></div><div class="nav26-mi-body"><div class="nav26-mi-row"><div class="nav26-mi-label">Spreadsheets vs Software</div><svg data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a7978e&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" stroke-linejoin="round" stroke-linecap="round" stroke-width="2.25" stroke="currentColor" fill="none" viewBox="0 0 24 24" height="15" width="15" class="nav26-arrow nav26-arrow"><path d="M18 8L22 12L18 16"></path><path d="M5.2 12H22"></path></svg></div><div class="nav26-mi-desc">Calculate your equity management cost.</div></div></a><a data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79793&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" href="../calculators/index.html" class="nav26-mi w-inline-block"><div data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79794&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" class="nav26-mi-ic"><svg fill="currentColor" viewBox="0 0 256 256" height="19" width="19" class="nav26-mi-svg nav26-mi-svg"><path d="M80,120h96a8,8,0,0,0,8-8V64a8,8,0,0,0-8-8H80a8,8,0,0,0-8,8v48A8,8,0,0,0,80,120Zm8-48h80v32H88ZM200,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V40A16,16,0,0,0,200,24Zm0,192H56V40H200ZM100,148a12,12,0,1,1-12-12A12,12,0,0,1,100,148Zm40,0a12,12,0,1,1-12-12A12,12,0,0,1,140,148Zm40,0a12,12,0,1,1-12-12A12,12,0,0,1,180,148Zm-80,40a12,12,0,1,1-12-12A12,12,0,0,1,100,188Zm40,0a12,12,0,1,1-12-12A12,12,0,0,1,140,188Zm40,0a12,12,0,1,1-12-12A12,12,0,0,1,180,188Z"></path></svg></div><div class="nav26-mi-body"><div class="nav26-mi-row"><div class="nav26-mi-label">Calculators</div><svg data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a7979b&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" stroke-linejoin="round" stroke-linecap="round" stroke-width="2.25" stroke="currentColor" fill="none" viewBox="0 0 24 24" height="15" width="15" class="nav26-arrow nav26-arrow"><path d="M18 8L22 12L18 16"></path><path d="M5.2 12H22"></path></svg></div><div class="nav26-mi-desc">Free tools for valuation, option pools and more.</div></div></a></div></div><div class="nav26-col nav26-col-line nav26-col-feat"><div class="nav26-eyebrow">Featured</div><a href="https://community.equitylist.co" data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a797a3&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" class="nav26-fc nav26-fc-community w-inline-block"><div class="nav26-fc-media"><img src="https://cdn.prod.website-files.com/6433d879545aff6081fcc017/6abbace6f3f46b229b442515_nav-community-booth.webp" loading="lazy" data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a797a5&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" sizes="100vw" alt="The EquityList team talking with visitors at their Dubai FinTech Summit booth" srcset="https://cdn.prod.website-files.com/6433d879545aff6081fcc017/6abbace6f3f46b229b442515_nav-community-booth-p-500.webp 500w, https://cdn.prod.website-files.com/6433d879545aff6081fcc017/6abbace6f3f46b229b442515_nav-community-booth-p-800.webp 800w, https://cdn.prod.website-files.com/6433d879545aff6081fcc017/6abbace6f3f46b229b442515_nav-community-booth.webp 840w" class="nav26-fc-img"/></div><div class="nav26-fc-text"><div class="nav26-fc-title">EquityList Community<svg data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a797a9&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" stroke-linejoin="round" stroke-linecap="round" stroke-width="2.25" stroke="currentColor" fill="none" viewBox="0 0 24 24" height="15" width="15" class="nav26-arrow nav26-arrow"><path d="M18 8L22 12L18 16"></path><path d="M5.2 12H22"></path></svg></div><div class="nav26-fc-desc">Connect with founders, finance and people teams running equity.</div></div></a></div></div><div class="nav26-panel nav26-p-company"><div class="nav26-col"><div class="nav26-list-2col"><a href="../about-us/index.html" data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a797b1&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" class="nav26-mi w-inline-block"><div data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a797b2&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" class="nav26-mi-ic"><svg fill="currentColor" viewBox="0 0 256 256" height="19" width="19" class="nav26-mi-svg nav26-mi-svg"><path d="M42.76,50A8,8,0,0,0,40,56V224a8,8,0,0,0,16,0V179.77c26.79-21.16,49.87-9.75,76.45,3.41,16.4,8.11,34.06,16.85,53,16.85,13.93,0,28.54-4.75,43.82-18a8,8,0,0,0,2.76-6V56A8,8,0,0,0,218.76,50c-28,24.23-51.72,12.49-79.21-1.12C111.07,34.76,78.78,18.79,42.76,50ZM216,172.25c-26.79,21.16-49.87,9.74-76.45-3.41-25-12.35-52.81-26.130-83.55-8.4V59.79c26.79-21.16,49.87-9.75,76.45,3.4,25,12.35,52.82,26.13,83.55,8.4Z"></path></svg></div><div class="nav26-mi-body"><div class="nav26-mi-row"><div class="nav26-mi-label">About us</div><svg data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a797b9&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" stroke-linejoin="round" stroke-linecap="round" stroke-width="2.25" stroke="currentColor" fill="none" viewBox="0 0 24 24" height="15" width="15" class="nav26-arrow nav26-arrow"><path d="M18 8L22 12L18 16"></path><path d="M5.2 12H22"></path></svg></div><div class="nav26-mi-desc">Our story, mission, and backers.</div></div></a><a href="https://wellfound.com/company/equitylist" data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a797be&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" class="nav26-mi w-inline-block"><div data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a797bf&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" class="nav26-mi-ic"><svg fill="currentColor" viewBox="0 0 256 256" height="19" width="19" class="nav26-mi-svg nav26-mi-svg"><path d="M216,56H176V48a24,24,0,0,0-24-24H104A24,24,0,0,0,80,48v8H40A16,16,0,0,0,24,72V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V72A16,16,0,0,0,216,56ZM96,48a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96ZM216,72v41.61A184,184,0,0,1,128,136a184.07,184.07,0,0,1-88-22.38V72Zm0,128H40V131.64A200.19,200.19,0,0,0,128,152a200.25,200.25,0,0,0,88-20.37V200ZM104,112a8,8,0,0,1,8-8h32a8,8,0,0,1,0,16H112A8,8,0,0,1,104,112Z"></path></svg></div><div class="nav26-mi-body"><div class="nav26-mi-row"><div class="nav26-mi-label">Careers</div><svg data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a797c6&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" stroke-linejoin="round" stroke-linecap="round" stroke-width="2.25" stroke="currentColor" fill="none" viewBox="0 0 24 24" height="15" width="15" class="nav26-arrow nav26-arrow"><path d="M18 8L22 12L18 16"></path><path d="M5.2 12H22"></path></svg></div><div class="nav26-mi-desc">Explore your next challenge with us.</div></div></a><a href="../contact/index.html" data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a797cb&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" class="nav26-mi w-inline-block"><div data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a797cc&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" class="nav26-mi-ic"><svg fill="currentColor" viewBox="0 0 256 256" height="19" width="19" class="nav26-mi-svg nav26-mi-svg"><path d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48ZM203.43,64,128,133.15,52.57,64ZM216,192H40V74.19l82.59,75.71a8,8,0,0,0,10.82,0L216,74.19V192Z"></path></svg></div><div class="nav26-mi-body"><div class="nav26-mi-row"><div class="nav26-mi-label">Contact us</div><svg data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a797d3&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" stroke-linejoin="round" stroke-linecap="round" stroke-width="2.25" stroke="currentColor" fill="none" viewBox="0 0 24 24" height="15" width="15" class="nav26-arrow nav26-arrow"><path d="M18 8L22 12L18 16"></path><path d="M5.2 12H22"></path></svg></div><div class="nav26-mi-desc">Talk to our team.</div></div></a></div></div><div class="nav26-col nav26-col-line nav26-col-feat"><div class="nav26-eyebrow">Featured</div><a href="https://wellfound.com/company/equitylist" data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a797db&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" class="nav26-fc nav26-fc-hiring w-inline-block"><div class="nav26-hire"><img src="https://cdn.prod.website-files.com/6433d879545aff6081fcc017/6abbace6111d18d7691adff7_nav-hiring-crowd.svg" loading="lazy" alt="" class="nav26-hire-bg"/><img src="https://cdn.prod.website-files.com/6433d879545aff6081fcc017/6abbace6a302b857b1c4cf76_nav-hiring-lens.svg" loading="lazy" data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a797de&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" alt="" class="nav26-hire-lens"/></div><div class="nav26-fc-text nav26-fc-pad"><div class="nav26-fc-title">We&#x27;re hiring<svg data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a797e2&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" stroke-linejoin="round" stroke-linecap="round" stroke-width="2.25" stroke="currentColor" fill="none" viewBox="0 0 24 24" height="15" width="15" class="nav26-arrow nav26-arrow"><path d="M18 8L22 12L18 16"></path><path d="M5.2 12H22"></path></svg></div><div class="nav26-fc-desc">Join a team building across 16 countries and 5 continents.</div></div></a></div></div></div></div><div class="nav26-mob"><div class="nav26-mob-card"><div class="nav26-mob-list"><div class="nav26-mg"><div class="nav26-mg-head nav26-mgh-products">Products<svg fill="currentColor" viewBox="0 0 256 256" height="16" width="16" class="nav26-mg-caret nav26-mgc-products nav26-mg-caret nav26-mgc-products"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path></svg></div><div class="nav26-mg-body nav26-mgb-products"><div class="nav26-mg-inner"><div class="nav26-mgroup"><div class="nav26-mh">Core</div><a href="https://www.equitylist.co/products/captable-management" class="nav26-ml w-inline-block"><div class="nav26-mi-ic"><svg fill="currentColor" viewBox="0 0 256 256" height="18" width="18" class="nav26-ml-svg nav26-ml-svg"><path d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48ZM40,112H80v32H40Zm56,0H216v32H96ZM216,64V96H40V64ZM40,160H80v32H40Zm176,32H96V160H216v32Z"></path></svg></div><div class="nav26-ml-body"><div class="nav26-ml-label">Cap table management</div><div class="nav26-ml-desc">Real-time ownership clarity.</div></div></a><a href="https://www.equitylist.co/products/stocks-option-management" class="nav26-ml w-inline-block"><div class="nav26-mi-ic"><svg fill="currentColor" viewBox="0 0 256 256" height="18" width="18" class="nav26-ml-svg nav26-ml-svg"><path d="M128,136a8,8,0,0,1-8,8H72a8,8,0,0,1,0-16h48A8,8,0,0,1,128,136Zm-8-40H72a8,8,0,0,0,0,16h48a8,8,0,0,0,0-16Zm112,65.47V224A8,8,0,0,1,220,231l-24-13.74L172,231A8,8,0,0,1,160,224V200H40a16,16,0,0,1-16-16V56A16,16,0,0,1,40,40H216a16,16,0,0,1,16,16V86.53a51.88,51.88,0,0,1,0,74.94ZM160,184V161.47A52,52,0,0,1,216,76V56H40V184Zm56-12a51.88,51.88,0,0,1-40,0v38.22l16-9.16a8,8,0,0,1,7.94,0l16,9.16Zm16-48a36,36,0,1,0-36,36A36,36,0,0,0,232,124Z"></path></svg></div><div class="nav26-ml-body"><div class="nav26-ml-label">Equity grants</div><div class="nav26-ml-desc">Automate options, RSUs, and SARs, from grant to exercise.</div></div></a><a href="../products/shareholder-management/index.html" class="nav26-ml w-inline-block"><div class="nav26-mi-ic"><svg fill="currentColor" viewBox="0 0 256 256" height="18" width="18" class="nav26-ml-svg nav26-ml-svg"><path d="M117.25,157.92a60,60,0,1,0-66.5,0A95.83,95.83,0,0,0,3.53,195.63a8,8,0,1,0,13.4,8.74,80,80,0,0,1,134.14,0,8,8,0,0,0,13.4-8.74A95.83,95.83,0,0,0,117.25,157.92ZM40,108a44,44,0,1,1,44,44A44.05,44.05,0,0,1,40,108Zm210.14,98.7a8,8,0,0,1-11.07-2.33A79.83,79.83,0,0,0,172,168a8,8,0,0,1,0-16,44,44,0,1,0-16.34-84.87,8,8,0,1,1-5.94-14.85,60,60,0,0,1,55.53,105.64,95.83,95.83,0,0,1,47.22,37.71A8,8,0,0,1,250.14,206.7Z"></path></svg></div><div class="nav26-ml-body"><div class="nav26-ml-label">Shareholder management</div><div class="nav26-ml-desc">Keep every stakeholder in sync.</div></div></a></div><div class="nav26-mgroup nav26-mgroup-next"><div class="nav26-mh">Add-ons <!-- -->&amp;<!-- --> services</div><a href="../409a-valuation/index.html" class="nav26-ml w-inline-block"><div class="nav26-mi-ic"><svg fill="currentColor" viewBox="0 0 256 256" height="18" width="18" class="nav26-ml-svg nav26-ml-svg"><path d="M72,104a8,8,0,0,1,8-8h96a8,8,0,0,1,0,16H80A8,8,0,0,1,72,104Zm8,40h96a8,8,0,0,0,0-16H80a8,8,0,0,0,0,16ZM232,56V208a8,8,0,0,1-11.58,7.15L192,200.94l-28.42,14.21a8,8,0,0,1-7.16,0L128,200.94,99.58,215.15a8,8,0,0,1-7.16,0L64,200.94,35.58,215.15A8,8,0,0,1,24,208V56A16,16,0,0,1,40,40H216A16,16,0,0,1,232,56Zm-16,0H40V195.06l20.42-10.22a8,8,0,0,1,7.16,0L96,199.06l28.42-14.22a8,8,0,0,1,7.16,0L160,199.06l28.42-14.22a8,8,0,0,1,7.16,0L216,195.06Z"></path></svg></div><div class="nav26-ml-body"><div class="nav26-ml-label">409A <!-- -->&amp;<!-- --> valuations</div><div class="nav26-ml-desc">Audit-ready FMV for option grants.</div></div></a><a href="../esop-advisory/index.html" class="nav26-ml w-inline-block"><div class="nav26-mi-ic"><svg fill="currentColor" viewBox="0 0 256 256" height="18" width="18" class="nav26-ml-svg nav26-ml-svg"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216ZM172.42,72.84l-64,32a8.05,8.05,0,0,0-3.58,3.58l-32,64A8,8,0,0,0,80,184a8.1,8.1,0,0,0,3.58-.84l64-32a8.05,8.05,0,0,0,3.58-3.58l32-64a8,8,0,0,0-10.74-10.74ZM138,138,97.89,158.11,118,118l40.15-20.07Z"></path></svg></div><div class="nav26-ml-body"><div class="nav26-ml-label">Equity advisory</div><div class="nav26-ml-desc">Equity award plans for your team.</div></div></a><a href="../secretarial-compliance/index.html" class="nav26-ml w-inline-block"><div class="nav26-mi-ic"><svg fill="currentColor" viewBox="0 0 256 256" height="18" width="18" class="nav26-ml-svg nav26-ml-svg"><path d="M168,152a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,152Zm-8-40H96a8,8,0,0,0,0,16h64a8,8,0,0,0,0-16Zm56-64V216a16,16,0,0,1-16,16H56a16,16,0,0,1-16-16V48A16,16,0,0,1,56,32H92.26a47.92,47.92,0,0,1,71.48,0H200A16,16,0,0,1,216,48ZM96,64h64a32,32,0,0,0-64,0ZM200,48H173.25A47.93,47.93,0,0,1,176,64v8a8,8,0,0,1-8,8H88a8,8,0,0,1-8-8V64a47.93,47.93,0,0,1,2.75-16H56V216H200Z"></path></svg></div><div class="nav26-ml-body"><div class="nav26-ml-label">Secretarial compliance</div><div class="nav26-ml-desc">Stay on top of statutory deadlines.</div></div></a><a href="../products/dematerialisation-of-shares/index.html" class="nav26-ml w-inline-block"><div class="nav26-mi-ic"><svg fill="currentColor" viewBox="0 0 256 256" height="18" width="18" class="nav26-ml-svg nav26-ml-svg"><path d="M224,48V96a8,8,0,0,1-8,8H168a8,8,0,0,1,0-16h28.69L182.06,73.37a79.56,79.56,0,0,0-56.13-23.43h-.45A79.52,79.52,0,0,0,69.59,72.71,8,8,0,0,1,58.41,61.27a96,96,0,0,1,135,.79L208,76.69V48a8,8,0,0,1,16,0ZM186.41,183.29a80,80,0,0,1-112.47-.66L59.31,168H88a8,8,0,0,0,0-16H40a8,8,0,0,0-8,8v48a8,8,0,0,0,16,0V179.31l14.63,14.63A95.43,95.43,0,0,0,130,222.06h.53a95.36,95.36,0,0,0,67.07-27.33,8,8,0,0,0-11.18-11.44Z"></path></svg></div><div class="nav26-ml-body"><div class="nav26-ml-label">Dematerialization</div><div class="nav26-ml-desc">Digitize your shares.</div></div></a></div><div class="nav26-mh nav26-mh-feat">Featured</div><a href="../y-combinator/index.html" data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a7983c&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" class="nav26-fc nav26-fc-cases w-inline-block"><div class="nav26-fan-slot"><div class="nav26-fan"><div data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a7983f&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" class="nav26-tile nav26-tile-ycel"><img src="https://cdn.prod.website-files.com/6433d879545aff6081fcc017/6abf4f7cdfa4f37d1a09847e_nav-yc-tile-el.png" loading="lazy" alt="" class="nav26-tile-img nav26-img-cover"/></div><div data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79843&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" class="nav26-tile nav26-tile-ycy"><img src="https://cdn.prod.website-files.com/6433d879545aff6081fcc017/6abf4f7d8ca055ddb593060a_nav-yc-tile-y.png" loading="lazy" alt="" class="nav26-tile-img nav26-img-cover"/></div></div></div><div class="nav26-fc-text nav26-fc-pad"><div class="nav26-fc-title">For YC startups<svg data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79848&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" stroke-linejoin="round" stroke-linecap="round" stroke-width="2.25" stroke="currentColor" fill="none" viewBox="0 0 24 24" height="15" width="15" class="nav26-arrow nav26-arrow"><path d="M18 8L22 12L18 16"></path><path d="M5.2 12H22"></path></svg></div><div class="nav26-fc-desc">50% off year one, with free migration from Pulley or Carta.</div></div></a></div></div></div><div class="nav26-mg"><div class="nav26-mg-head nav26-mgh-solutions">Solutions<svg fill="currentColor" viewBox="0 0 256 256" height="16" width="16" class="nav26-mg-caret nav26-mgc-solutions nav26-mg-caret nav26-mgc-solutions"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path></svg></div><div class="nav26-mg-body nav26-mgb-solutions"><div class="nav26-mg-inner"><div class="nav26-mgroup"><div class="nav26-mh">By stage</div><a href="../private-companies/index.html" class="nav26-ml w-inline-block"><div class="nav26-mi-ic"><svg fill="currentColor" viewBox="0 0 256 256" height="18" width="18" class="nav26-ml-svg nav26-ml-svg"><path d="M232,224H208V32h8a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16h8V224H24a8,8,0,0,0,0,16H232a8,8,0,0,0,0-16ZM64,32H192V224H160V184a8,8,0,0,0-8-8H104a8,8,0,0,0-8,8v40H64Zm80,192H112V192h32ZM88,64a8,8,0,0,1,8-8h16a8,8,0,0,1,0,16H96A8,8,0,0,1,88,64Zm48,0a8,8,0,0,1,8-8h16a8,8,0,0,1,0,16H144A8,8,0,0,1,136,64ZM88,104a8,8,0,0,1,8-8h16a8,8,0,0,1,0,16H96A8,8,0,0,1,88,104Zm48,0a8,8,0,0,1,8-8h16a8,8,0,0,1,0,16H144A8,8,0,0,1,136,104ZM88,144a8,8,0,0,1,8-8h16a8,8,0,0,1,0,16H96A8,8,0,0,1,88,144Zm48,0a8,8,0,0,1,8-8h16a8,8,0,0,1,0,16H144A8,8,0,0,1,136,144Z"></path></svg></div><div class="nav26-ml-body"><div class="nav26-ml-label">Startups <!-- -->&amp;<!-- --> private companies</div><div class="nav26-ml-desc">Scale-ready cap tables and equity awards.</div></div></a><a href="https://www.equitylist.co/india/public-listed-esop-software" class="nav26-ml w-inline-block"><div class="nav26-mi-ic"><svg fill="currentColor" viewBox="0 0 256 256" height="18" width="18" class="nav26-ml-svg nav26-ml-svg"><path d="M240,208H224V96a16,16,0,0,0-16-16H144V32a16,16,0,0,0-24.88-13.32L39.12,72A16,16,0,0,0,32,85.34V208H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16ZM208,96V208H144V96ZM48,85.34,128,32V208H48ZM112,112v16a8,8,0,0,1-16,0V112a8,8,0,1,1,16,0Zm-32,0v16a8,8,0,0,1-16,0V112a8,8,0,1,1,16,0Zm0,56v16a8,8,0,0,1-16,0V168a8,8,0,0,1,16,0Zm32,0v16a8,8,0,0,1-16,0V168a8,8,0,0,1,16,0Z"></path></svg></div><div class="nav26-ml-body"><div class="nav26-ml-label">Public <!-- -->&amp;<!-- --> enterprise</div><div class="nav26-ml-desc">Payment <!-- -->&amp;<!-- --> Trust workflows for listed companies.</div></div></a></div><div class="nav26-mgroup nav26-mgroup-next"><div class="nav26-mh">By team</div><a href="../solutions/founder/index.html" class="nav26-ml w-inline-block"><div class="nav26-mi-ic"><svg fill="currentColor" viewBox="0 0 256 256" height="18" width="18" class="nav26-ml-svg nav26-ml-svg"><path d="M248,80a28,28,0,1,0-51.12,15.77l-26.79,33L146,73.4a28,28,0,1,0-36.06,0L85.91,128.74l-26.79-33a28,28,0,1,0-26.6,12L47,194.63A16,16,0,0,0,62.78,208H193.22A16,16,0,0,0,209,194.63l14.47-86.85A28,28,0,0,0,248,80ZM128,40a12,12,0,1,1-12,12A12,12,0,0,1,128,40ZM24,80A12,12,0,1,1,36,92,12,12,0,0,1,24,80ZM193.22,192H62.78L48.86,108.52,81.79,149A8,8,0,0,0,88,152a7.83,7.83,0,0,0,1.08-.07,8,8,0,0,0,6.26-4.74l29.3-67.4a27,27,0,0,0,6.72,0l29.3,67.4a8,8,0,0,0,6.26,4.74A7.83,7.83,0,0,0,168,152a8,8,0,0,0,6.21-3l32.93-40.52ZM220,92a12,12,0,1,1,12-12A12,12,0,0,1,220,92Z"></path></svg></div><div class="nav26-ml-body"><div class="nav26-ml-label">Founders <!-- -->&amp;<!-- --> CEOs</div><div class="nav26-ml-desc">Grant, track, and scale equity with confidence.</div></div></a><a href="../solutions/finance/index.html" class="nav26-ml w-inline-block"><div class="nav26-mi-ic"><svg fill="currentColor" viewBox="0 0 256 256" height="18" width="18" class="nav26-ml-svg nav26-ml-svg"><path d="M232,208a8,8,0,0,1-8,8H32a8,8,0,0,1-8-8V48a8,8,0,0,1,16,0v94.37L90.73,98a8,8,0,0,1,10.07-.38l58.81,44.11L218.73,90a8,8,0,1,1,10.54,12l-64,56a8,8,0,0,1-10.07.38L96.39,114.29,40,163.63V200H224A8,8,0,0,1,232,208Z"></path></svg></div><div class="nav26-ml-body"><div class="nav26-ml-label">Finance</div><div class="nav26-ml-desc">Accurate equity data for audits and reporting.</div></div></a><a href="../solutions/hr/index.html" class="nav26-ml w-inline-block"><div class="nav26-mi-ic"><svg fill="currentColor" viewBox="0 0 256 256" height="18" width="18" class="nav26-ml-svg nav26-ml-svg"><path d="M244.8,150.4a8,8,0,0,1-11.2-1.6A51.6,51.6,0,0,0,192,128a8,8,0,0,1-7.37-4.89,8,8,0,0,1,0-6.22A8,8,0,0,1,192,112a24,24,0,1,0-23.24-30,8,8,0,1,1-15.5-4A40,40,0,1,1,219,117.51a67.94,67.94,0,0,1,27.43,21.68A8,8,0,0,1,244.8,150.4ZM190.92,212a8,8,0,1,1-13.84,8,57,57,0,0,0-98.16,0,8,8,0,1,1-13.84-8,72.06,72.06,0,0,1,33.74-29.92,48,48,0,1,1,58.36,0A72.06,72.06,0,0,1,190.92,212ZM128,176a32,32,0,1,0-32-32A32,32,0,0,0,128,176ZM72,120a8,8,0,0,0-8-8A24,24,0,1,1,87.24,82a8,8,0,1,0,15.5-4A40,40,0,1,0,37,117.51,67.94,67.94,0,0,0,9.6,139.19a8,8,0,1,0,12.8,9.61A51.6,51.6,0,0,1,64,128,8,8,0,0,0,72,120Z"></path></svg></div><div class="nav26-ml-body"><div class="nav26-ml-label">People <!-- -->&amp;<!-- --> HR</div><div class="nav26-ml-desc">Simple, seamless equity for employees.</div></div></a></div><div class="nav26-mh nav26-mh-feat">Featured</div><a href="../y-combinator/index.html" data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79893&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" class="nav26-fc nav26-fc-cases w-inline-block"><div class="nav26-fan-slot"><div class="nav26-fan"><div data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79896&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" class="nav26-tile nav26-tile-ycel"><img src="https://cdn.prod.website-files.com/6433d879545aff6081fcc017/6abf4f7cdfa4f37d1a09847e_nav-yc-tile-el.png" loading="lazy" alt="" class="nav26-tile-img nav26-img-cover"/></div><div data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a7989a&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" class="nav26-tile nav26-tile-ycy"><img src="https://cdn.prod.website-files.com/6433d879545aff6081fcc017/6abf4f7d8ca055ddb593060a_nav-yc-tile-y.png" loading="lazy" alt="" class="nav26-tile-img nav26-img-cover"/></div></div></div><div class="nav26-fc-text nav26-fc-pad"><div class="nav26-fc-title">For YC startups<svg data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a7989f&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" stroke-linejoin="round" stroke-linecap="round" stroke-width="2.25" stroke="currentColor" fill="none" viewBox="0 0 24 24" height="15" width="15" class="nav26-arrow nav26-arrow"><path d="M18 8L22 12L18 16"></path><path d="M5.2 12H22"></path></svg></div><div class="nav26-fc-desc">50% off year one, with free migration from Pulley or Carta.</div></div></a></div></div></div><div class="nav26-mg"><div class="nav26-mg-head nav26-mgh-resources">Resources<svg fill="currentColor" viewBox="0 0 256 256" height="16" width="16" class="nav26-mg-caret nav26-mgc-resources nav26-mg-caret nav26-mgc-resources"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path></svg></div><div class="nav26-mg-body nav26-mgb-resources"><div class="nav26-mg-inner"><div class="nav26-mgroup"><a href="../blog/index.html" class="nav26-ml w-inline-block"><div class="nav26-mi-ic"><svg fill="currentColor" viewBox="0 0 256 256" height="18" width="18" class="nav26-ml-svg nav26-ml-svg"><path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,160H40V56H216V200ZM184,96a8,8,0,0,1-8,8H80a8,8,0,0,1,0-16h96A8,8,0,0,1,184,96Zm0,32a8,8,0,0,1-8,8H80a8,8,0,0,1,0-16h96A8,8,0,0,1,184,128Zm0,32a8,8,0,0,1-8,8H80a8,8,0,0,1,0-16h96A8,8,0,0,1,184,160Z"></path></svg></div><div class="nav26-ml-body"><div class="nav26-ml-label">Blog</div><div class="nav26-ml-desc">Expert insights <!-- -->&amp;<!-- --> news on equity management.</div></div></a><a href="../product-updates/index.html" class="nav26-ml w-inline-block"><div class="nav26-mi-ic"><svg fill="currentColor" viewBox="0 0 256 256" height="18" width="18" class="nav26-ml-svg nav26-ml-svg"><path d="M223.68,66.15,135.68,18a15.88,15.88,0,0,0-15.36,0l-88,48.17a16,16,0,0,0-8.32,14v95.64a16,16,0,0,0,8.32,14l88,48.17a15.88,15.88,0,0,0,15.36,0l88-48.17a16,16,0,0,0,8.32-14V80.18A16,16,0,0,0,223.68,66.15ZM128,32l80.34,44-29.77,16.3-80.35-44ZM128,120,47.66,76l33.9-18.56,80.34,44ZM40,90l80,43.78v85.79L40,175.82Zm176,85.78h0l-80,43.79V133.82l32-17.51V152a8,8,0,0,0,16,0V107.55L216,90v85.77Z"></path></svg></div><div class="nav26-ml-body"><div class="nav26-ml-label">Product Updates</div><div class="nav26-ml-desc">What&#x27;s new on the platform.</div></div></a><a href="../pulley-alternative/index.html" class="nav26-ml w-inline-block"><div class="nav26-mi-ic"><svg fill="currentColor" viewBox="0 0 256 256" height="18" width="18" class="nav26-ml-svg nav26-ml-svg"><path d="M224,48V152a16,16,0,0,1-16,16H99.31l10.35,10.34a8,8,0,0,1-11.32,11.32l-24-24a8,8,0,0,1,0-11.32l24-24a8,8,0,0,1,11.32,11.32L99.31,152H208V48H96v8a8,8,0,0,1-16,0V48A16,16,0,0,1,96,32H208A16,16,0,0,1,224,48ZM168,192a8,8,0,0,0-8,8v8H48V104H156.69l-10.35,10.34a8,8,0,0,0,11.32,11.32l24-24a8,8,0,0,0,0-11.32l-24-24a8,8,0,0,0-11.32,11.32L156.69,88H48a16,16,0,0,0-16,16V208a16,16,0,0,0,16,16H160a16,16,0,0,0,16-16v-8A8,8,0,0,0,168,192Z"></path></svg></div><div class="nav26-ml-body"><div class="nav26-ml-label">EquityList vs Pulley</div><div class="nav26-ml-desc">What teams migrating from Pulley get with EquityList</div></div></a><a href="../templates/index.html" class="nav26-ml w-inline-block"><div class="nav26-mi-ic"><svg fill="currentColor" viewBox="0 0 256 256" height="18" width="18" class="nav26-ml-svg nav26-ml-svg"><path d="M213.66,66.34l-40-40A8,8,0,0,0,168,24H88A16,16,0,0,0,72,40V56H56A16,16,0,0,0,40,72V216a16,16,0,0,0,16,16H168a16,16,0,0,0,16-16V200h16a16,16,0,0,0,16-16V72A8,8,0,0,0,213.66,66.34ZM168,216H56V72h76.69L168,107.31v84.53c0,.06,0,.11,0,.16s0,.1,0,.16V216Zm32-32H184V104a8,8,0,0,0-2.34-5.66l-40-40A8,8,0,0,0,136,56H88V40h76.69L200,75.31Zm-56-32a8,8,0,0,1-8,8H88a8,8,0,0,1,0-16h48A8,8,0,0,1,144,152Zm0,32a8,8,0,0,1-8,8H88a8,8,0,0,1,0-16h48A8,8,0,0,1,144,184Z"></path></svg></div><div class="nav26-ml-body"><div class="nav26-ml-label">Templates</div><div class="nav26-ml-desc">Ready-to-use equity docs and spreadsheet, free to download.</div></div></a></div><div class="nav26-mgroup nav26-mgroup-next"><a href="../customer-stories/index.html" class="nav26-ml w-inline-block"><div class="nav26-mi-ic"><svg fill="currentColor" viewBox="0 0 256 256" height="18" width="18" class="nav26-ml-svg nav26-ml-svg"><path d="M224,200h-8V40a8,8,0,0,0-8-8H152a8,8,0,0,0-8,8V80H96a8,8,0,0,0-8,8v40H48a8,8,0,0,0-8,8v64H32a8,8,0,0,0,0,16H224a8,8,0,0,0,0-16ZM160,48h40V200H160ZM104,96h40V200H104ZM56,144H88v56H56Z"></path></svg></div><div class="nav26-ml-body"><div class="nav26-ml-label">Case studies</div><div class="nav26-ml-desc">How teams run equity like specialists.</div></div></a><a href="../roi-calculator/index.html" class="nav26-ml w-inline-block"><div class="nav26-mi-ic"><svg fill="currentColor" viewBox="0 0 256 256" height="18" width="18" class="nav26-ml-svg nav26-ml-svg"><path d="M80,120h96a8,8,0,0,0,8-8V64a8,8,0,0,0-8-8H80a8,8,0,0,0-8,8v48A8,8,0,0,0,80,120Zm8-48h80v32H88ZM200,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V40A16,16,0,0,0,200,24Zm0,192H56V40H200ZM100,148a12,12,0,1,1-12-12A12,12,0,0,1,100,148Zm40,0a12,12,0,1,1-12-12A12,12,0,0,1,140,148Zm40,0a12,12,0,1,1-12-12A12,12,0,0,1,180,148Zm-80,40a12,12,0,1,1-12-12A12,12,0,0,1,100,188Zm40,0a12,12,0,1,1-12-12A12,12,0,0,1,140,188Zm40,0a12,12,0,1,1-12-12A12,12,0,0,1,180,188Z"></path></svg></div><div class="nav26-ml-body"><div class="nav26-ml-label">Spreadsheets vs Software</div><div class="nav26-ml-desc">Calculate your equity management cost.</div></div></a><a href="../calculators/index.html" class="nav26-ml w-inline-block"><div class="nav26-mi-ic"><svg fill="currentColor" viewBox="0 0 256 256" height="18" width="18" class="nav26-ml-svg nav26-ml-svg"><path d="M80,120h96a8,8,0,0,0,8-8V64a8,8,0,0,0-8-8H80a8,8,0,0,0-8,8v48A8,8,0,0,0,80,120Zm8-48h80v32H88ZM200,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V40A16,16,0,0,0,200,24Zm0,192H56V40H200ZM100,148a12,12,0,1,1-12-12A12,12,0,0,1,100,148Zm40,0a12,12,0,1,1-12-12A12,12,0,0,1,140,148Zm40,0a12,12,0,1,1-12-12A12,12,0,0,1,180,148Zm-80,40a12,12,0,1,1-12-12A12,12,0,0,1,100,188Zm40,0a12,12,0,1,1-12-12A12,12,0,0,1,140,188Zm40,0a12,12,0,1,1-12-12A12,12,0,0,1,180,188Z"></path></svg></div><div class="nav26-ml-body"><div class="nav26-ml-label">Calculators</div><div class="nav26-ml-desc">Free tools for valuation, option pools and more.</div></div></a></div><div class="nav26-mh nav26-mh-feat">Featured</div><a href="https://community.equitylist.co" data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a798f0&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" class="nav26-fc nav26-fc-community w-inline-block"><div class="nav26-fc-media"><img src="https://cdn.prod.website-files.com/6433d879545aff6081fcc017/6abbace6f3f46b229b442515_nav-community-booth.webp" loading="lazy" data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a798f2&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" sizes="100vw" alt="The EquityList team talking with visitors at their Dubai FinTech Summit booth" srcset="https://cdn.prod.website-files.com/6433d879545aff6081fcc017/6abbace6f3f46b229b442515_nav-community-booth-p-500.webp 500w, https://cdn.prod.website-files.com/6433d879545aff6081fcc017/6abbace6f3f46b229b442515_nav-community-booth-p-800.webp 800w, https://cdn.prod.website-files.com/6433d879545aff6081fcc017/6abbace6f3f46b229b442515_nav-community-booth.webp 840w" class="nav26-fc-img"/></div><div class="nav26-fc-text"><div class="nav26-fc-title">EquityList Community<svg data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a798f6&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" stroke-linejoin="round" stroke-linecap="round" stroke-width="2.25" stroke="currentColor" fill="none" viewBox="0 0 24 24" height="15" width="15" class="nav26-arrow nav26-arrow"><path d="M18 8L22 12L18 16"></path><path d="M5.2 12H22"></path></svg></div><div class="nav26-fc-desc">Connect with founders, finance and people teams running equity.</div></div></a></div></div></div><a href="../pricing/index.html" class="nav26-mlink">Pricing</a><div class="nav26-mg"><div class="nav26-mg-head nav26-mgh-company">Company<svg fill="currentColor" viewBox="0 0 256 256" height="16" width="16" class="nav26-mg-caret nav26-mgc-company nav26-mg-caret nav26-mgc-company"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path></svg></div><div class="nav26-mg-body nav26-mgb-company"><div class="nav26-mg-inner"><div class="nav26-mgroup"><a href="../about-us/index.html" class="nav26-ml w-inline-block"><div class="nav26-mi-ic"><svg fill="currentColor" viewBox="0 0 256 256" height="18" width="18" class="nav26-ml-svg nav26-ml-svg"><path d="M42.76,50A8,8,0,0,0,40,56V224a8,8,0,0,0,16,0V179.77c26.79-21.16,49.87-9.75,76.45,3.41,16.4,8.11,34.06,16.85,53,16.85,13.93,0,28.54-4.75,43.82-18a8,8,0,0,0,2.76-6V56A8,8,0,0,0,218.76,50c-28,24.23-51.72,12.49-79.21-1.12C111.07,34.76,78.78,18.79,42.76,50ZM216,172.25c-26.79,21.16-49.87,9.74-76.45-3.41-25-12.35-52.81-26.13-83.55-8.4V59.79c26.79-21.16,49.87-9.75,76.45,3.4,25,12.35,52.82,26.13,83.55,8.4Z"></path></svg></div><div class="nav26-ml-body"><div class="nav26-ml-label">About us</div><div class="nav26-ml-desc">Our story, mission, and backers.</div></div></a><a href="https://wellfound.com/company/equitylist" class="nav26-ml w-inline-block"><div class="nav26-mi-ic"><svg fill="currentColor" viewBox="0 0 256 256" height="18" width="18" class="nav26-ml-svg nav26-ml-svg"><path d="M216,56H176V48a24,24,0,0,0-24-24H104A24,24,0,0,0,80,48v8H40A16,16,0,0,0,24,72V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V72A16,16,0,0,0,216,56ZM96,48a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96ZM216,72v41.61A184,184,0,0,1,128,136a184.07,184.07,0,0,1-88-22.38V72Zm0,128H40V131.64A200.19,200.19,0,0,0,128,152a200.25,200.25,0,0,0,88-20.37V200ZM104,112a8,8,0,0,1,8-8h32a8,8,0,0,1,0,16H112A8,8,0,0,1,104,112Z"></path></svg></div><div class="nav26-ml-body"><div class="nav26-ml-label">Careers</div><div class="nav26-ml-desc">Explore your next challenge with us.</div></div></a><a href="../contact/index.html" class="nav26-ml w-inline-block"><div class="nav26-mi-ic"><svg fill="currentColor" viewBox="0 0 256 256" height="18" width="18" class="nav26-ml-svg nav26-ml-svg"><path d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48ZM203.43,64,128,133.15,52.57,64ZM216,192H40V74.19l82.59,75.71a8,8,0,0,0,10.82,0L216,74.19V192Z"></path></svg></div><div class="nav26-ml-body"><div class="nav26-ml-label">Contact us</div><div class="nav26-ml-desc">Talk to our team.</div></div></a></div><div class="nav26-mh nav26-mh-feat">Featured</div><a href="https://wellfound.com/company/equitylist" data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79922&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" class="nav26-fc nav26-fc-hiring w-inline-block"><div class="nav26-hire"><img src="https://cdn.prod.website-files.com/6433d879545aff6081fcc017/6abbace6111d18d7691adff7_nav-hiring-crowd.svg" loading="lazy" alt="" class="nav26-hire-bg"/><img src="https://cdn.prod.website-files.com/6433d879545aff6081fcc017/6abbace6a302b857b1c4cf76_nav-hiring-lens.svg" loading="lazy" data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79925&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" alt="" class="nav26-hire-lens"/></div><div class="nav26-fc-text nav26-fc-pad"><div class="nav26-fc-title">We&#x27;re hiring<svg data-wf-target="[[[&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79627&quot;,&quot;fac9fdd5-e8ce-1e35-c4d7-0ffae8a79929&quot;],[&quot;ad6abd2d-f52d-6236-b7fd-9983f5c4485a&quot;]]]" stroke-linejoin="round" stroke-linecap="round" stroke-width="2.25" stroke="currentColor" fill="none" viewBox="0 0 24 24" height="15" width="15" class="nav26-arrow nav26-arrow"><path d="M18 8L22 12L18 16"></path><path d="M5.2 12H22"></path></svg></div><div class="nav26-fc-desc">Join a team building across 16 countries and 5 continents.</div></div></a></div></div></div></div><div class="nav26-mob-actions"><div class="nav26-mob-grid"><a href="https://app.equitylist.co/login" class="nav26-mb">Sign In</a><a href="../contact/index.html" class="nav26-mb nav26-mb-demo">Book a Demo</a></div><a href="https://app.equitylist.co/get-started" class="nav26-mb-start">Get Started</a></div></div></div></div></div><div class="w-embed w-script"><style>
+/* The notification bar sits inside .nav26-offset, at the top of the fixed
+   header, so the navbar always starts just below it however many lines the
+   message wraps to. Its own class is fixed-position (other navbars still use
+   it that way), so it is put back into normal flow only here. */
+.nav26-offset .notification-bar { position: relative; top: auto; left: auto; right: auto; }
+/* Opening the mobile menu leaves inline display/height on .nav26-mob, which
+   beats the class rule that hides it on desktop. Keep it hidden there. */
+@media (min-width: 1280px) { .nav26-mob { display: none !important; } }
+</style>
+<script>
+/* Nav 2026: the only script in this navbar. Layout, menus and animations are
+   native Webflow elements and Interactions; these things have no
+   Interactions trigger:
+     1. Esc, a click outside the navbar, or resizing across the desktop
+        breakpoint (1280px) closes an open menu. It fires the Interactions
+        custom events "nav26-close" (mega menu) and "nav26-mclose" (mobile menu).
+     2. Pricing points India visitors at /pricing-india, with the same rule as
+        the site's regional pricing script (saved region choice, then the
+        browser timezone, otherwise /pricing). */
+(function () {
+  function emit(name) {
+    try { window.Webflow && Webflow.require('ix3').emit(name); } catch (e) {}
+  }
+  function closeAll() { emit('nav26-close'); emit('nav26-mclose'); }
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeAll(); });
+  document.addEventListener('click', function (e) { if (!e.target.closest('.nav26-shell')) closeAll(); });
+  try {
+    var desktop = window.matchMedia('(min-width: 1280px)');
+    var onCross = function () { closeAll(); };
+    if (desktop.addEventListener) desktop.addEventListener('change', onCross);
+    else if (desktop.addListener) desktop.addListener(onCross);
+  } catch (e) {}
+
+  function isIndia() {
+    try {
+      var raw = localStorage.getItem('el_pricing_country');
+      if (raw) { var o = JSON.parse(raw); if (o && o.c) return o.c === '/pricing-india' || o.c === 'IN'; }
+    } catch (e) {}
+    try {
+      var label = localStorage.getItem('el.pricing.region');
+      if (label) return label === 'India';
+    } catch (e) {}
+    try {
+      var tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+      return tz === 'Asia/Kolkata' || tz === 'Asia/Calcutta';
+    } catch (e) {}
+    return false;
+  }
+  var want = isIndia() ? '/pricing-india' : '/pricing';
+  var links = document.querySelectorAll('.nav26 a[href="../pricing/index.html"], .nav26 a[href="../pricing-india/index.html"]');
+  for (var i = 0; i < links.length; i++) links[i].setAttribute('href', want);
+})();
+</script></div></div><div class="inner-banner"><div class="inner-banner-wrapper"><div class="container"><div class="inner-banner-content-wrapper"><h2 class="inner-banner-tittle">checkout</h2><div class="breadcrumb-wrapper"><div class="breadcrumb-content-wrapper"><a href="../products/cap-table-management/index.html" class="breadcrumb-link">HOME</a><div class="breadcrumb-arrow">&gt;</div><a href="../pricing/index.html" class="breadcrumb-link">PRICING</a><div class="breadcrumb-arrow">&gt;</div><a href="index.html" aria-current="page" class="breadcrumb-link w--current">checkout</a></div></div></div></div></div><div class="inner-banner-bg"></div></div><div data-node-type="commerce-paypal-checkout-form-container" data-wf-checkout-query="query Dynamo3 {
+  database {
+    id
+    commerceOrder {
+      availableShippingMethods {
+        description
+        id
+        mode
+        name
+        price {
+          decimalValue
+          string
+          unit
+          value
+        }
+        selected
+      }
+      comment
+      customData {
+        checkbox
+        name
+        textArea
+        textInput
+      }
+      customerInfo {
+        billingAddress {
+          addressee
+          city
+          country
+          japanType
+          line1
+          line2
+          postalCode
+          state
+          type
+        }
+        identity {
+          email
+          fullName
+        }
+        shippingAddress {
+          addressee
+          city
+          country
+          japanType
+          line1
+          line2
+          postalCode
+          state
+          type
+        }
+        stripePayment {
+          card {
+            expires {
+              month
+              year
+            }
+            last4
+            provided
+            provider
+          }
+        }
+      }
+      downloadFiles {
+        id
+        name
+        url
+      }
+      extraItems {
+        name
+        pluginId
+        pluginName
+        price {
+          decimalValue
+          string
+          unit
+          value
+        }
+      }
+      id
+      paymentProcessor
+      startedOn
+      statusFlags {
+        billingAddressRequiresPostalCode
+        hasDownloads
+        hasSubscription
+        isFreeOrder
+        needAddress
+        needIdentity
+        needItems
+        needPayment
+        requiresShipping
+        shippingAddressRequiresPostalCode
+        shouldRecalc
+      }
+      subtotal {
+        decimalValue
+        string
+        unit
+        value
+      }
+      total {
+        decimalValue
+        string
+        unit
+        value
+      }
+      updatedOn
+      userItems {
+        count
+        id
+        product {
+          id
+          cmsLocaleId
+          draft
+          archived
+          f_name_: name
+          f_sku_properties_3dr: skuProperties {
+            id
+            name
+            enum {
+              id
+              name
+              slug
+            }
+          }
+        }
+        rowTotal {
+          decimalValue
+          string
+          unit
+          value
+        }
+        sku {
+          cmsLocaleId
+          draft
+          archived
+          f_main_image_4dr: mainImage {
+            url
+            file {
+              size
+              origFileName
+              createdOn
+              updatedOn
+              mimeType
+              width
+              height
+              variants {
+                origFileName
+                quality
+                height
+                width
+                s3Url
+                error
+                size
+              }
+            }
+            alt
+          }
+          f_sku_values_3dr: skuValues {
+            property {
+              id
+            }
+            value {
+              id
+            }
+          }
+          id
+        }
+        subscriptionFrequency
+        subscriptionInterval
+        subscriptionTrial
+      }
+      userItemsCount
+    }
+  }
+  site {
+    commerce {
+      id
+      businessAddress {
+        country
+      }
+      defaultCountry
+      defaultCurrency
+      quickCheckoutEnabled
+    }
+  }
+}" data-wf-page-link-href-prefix="" class="w-commerce-commercepaypalcheckoutformcontainer checkout-form"><div class="w-commerce-commercelayoutcontainer container w-container"><div class="w-commerce-commercelayoutmain div-block-3"><form data-wf-bindings="%5B%5D" data-wf-conditions="%7B%22condition%22%3A%7B%22fields%22%3A%7B%22requiresShipping%22%3A%7B%22eq%22%3A%22true%22%2C%22type%22%3A%22Bool%22%7D%7D%7D%2C%22dataPath%22%3A%22database.commerceOrder%22%7D" data-node-type="commerce-checkout-shipping-methods-wrapper" class="w-commerce-commercecheckoutshippingmethodswrapper"><div class="w-commerce-commercecheckoutblockheader block-header"><h4 aria-level="2" class="checkout-form-tittle">Shipping Method</h4></div><fieldset class="block-content"><script type="text/x-wf-template" id="wf-template-6341170aebf97b2b180c78ff000000000012">%3Clabel%20class%3D%22w-commerce-commercecheckoutshippingmethoditem%20shipping-method%22%3E%3Cinput%20required%3D%22%22%20data-wf-bindings%3D%22%255B%257B%2522id%2522%253A%257B%2522type%2522%253A%2522PlainText%2522%252C%2522filter%2522%253A%257B%2522type%2522%253A%2522identity%2522%252C%2522params%2522%253A%255B%255D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.availableShippingMethods%255B%255D.id%2522%257D%257D%252C%257B%2522value%2522%253A%257B%2522type%2522%253A%2522PlainText%2522%252C%2522filter%2522%253A%257B%2522type%2522%253A%2522identity%2522%252C%2522params%2522%253A%255B%255D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.availableShippingMethods%255B%255D.id%2522%257D%257D%252C%257B%2522checked%2522%253A%257B%2522type%2522%253A%2522Bool%2522%252C%2522filter%2522%253A%257B%2522type%2522%253A%2522identity%2522%252C%2522params%2522%253A%255B%255D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.availableShippingMethods%255B%255D.selected%2522%257D%257D%255D%22%20type%3D%22radio%22%20name%3D%22shipping-method-choice%22%2F%3E%3Cdiv%20class%3D%22w-commerce-commercecheckoutshippingmethoddescriptionblock%22%3E%3Cdiv%20data-wf-bindings%3D%22%255B%257B%2522innerHTML%2522%253A%257B%2522type%2522%253A%2522PlainText%2522%252C%2522filter%2522%253A%257B%2522type%2522%253A%2522identity%2522%252C%2522params%2522%253A%255B%255D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.availableShippingMethods%255B%255D.name%2522%257D%257D%255D%22%20class%3D%22w-commerce-commerceboldtextblock%20shipping-type%20w-dyn-bind-empty%22%3E%3C%2Fdiv%3E%3Cdiv%20data-wf-bindings%3D%22%255B%257B%2522innerHTML%2522%253A%257B%2522type%2522%253A%2522PlainText%2522%252C%2522filter%2522%253A%257B%2522type%2522%253A%2522identity%2522%252C%2522params%2522%253A%255B%255D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.availableShippingMethods%255B%255D.description%2522%257D%257D%255D%22%20class%3D%22shipping-details%20w-dyn-bind-empty%22%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20data-wf-bindings%3D%22%255B%257B%2522innerHTML%2522%253A%257B%2522type%2522%253A%2522CommercePrice%2522%252C%2522filter%2522%253A%257B%2522type%2522%253A%2522price%2522%252C%2522params%2522%253A%255B%255D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.availableShippingMethods%255B%255D.price%2522%257D%257D%255D%22%20class%3D%22shipping-cost%22%3E%24%C2%A00.00%C2%A0USD%3C%2Fdiv%3E%3C%2Flabel%3E</script><div data-node-type="commerce-checkout-shipping-methods-list" class="w-commerce-commercecheckoutshippingmethodslist" data-wf-collection="database.commerceOrder.availableShippingMethods" data-wf-template-id="wf-template-6341170aebf97b2b180c78ff000000000012"><label class="w-commerce-commercecheckoutshippingmethoditem shipping-method"><input required="" data-wf-bindings="%5B%7B%22id%22%3A%7B%22type%22%3A%22PlainText%22%2C%22filter%22%3A%7B%22type%22%3A%22identity%22%2C%22params%22%3A%5B%5D%7D%2C%22dataPath%22%3A%22database.commerceOrder.availableShippingMethods%5B%5D.id%22%7D%7D%2C%7B%22value%22%3A%7B%22type%22%3A%22PlainText%22%2C%22filter%22%3A%7B%22type%22%3A%22identity%22%2C%22params%22%3A%5B%5D%7D%2C%22dataPath%22%3A%22database.commerceOrder.availableShippingMethods%5B%5D.id%22%7D%7D%2C%7B%22checked%22%3A%7B%22type%22%3A%22Bool%22%2C%22filter%22%3A%7B%22type%22%3A%22identity%22%2C%22params%22%3A%5B%5D%7D%2C%22dataPath%22%3A%22database.commerceOrder.availableShippingMethods%5B%5D.selected%22%7D%7D%5D" type="radio" name="shipping-method-choice"/><div class="w-commerce-commercecheckoutshippingmethoddescriptionblock"><div data-wf-bindings="%5B%7B%22innerHTML%22%3A%7B%22type%22%3A%22PlainText%22%2C%22filter%22%3A%7B%22type%22%3A%22identity%22%2C%22params%22%3A%5B%5D%7D%2C%22dataPath%22%3A%22database.commerceOrder.availableShippingMethods%5B%5D.name%22%7D%7D%5D" class="w-commerce-commerceboldtextblock shipping-type w-dyn-bind-empty"></div><div data-wf-bindings="%5B%7B%22innerHTML%22%3A%7B%22type%22%3A%22PlainText%22%2C%22filter%22%3A%7B%22type%22%3A%22identity%22%2C%22params%22%3A%5B%5D%7D%2C%22dataPath%22%3A%22database.commerceOrder.availableShippingMethods%5B%5D.description%22%7D%7D%5D" class="shipping-details w-dyn-bind-empty"></div></div><div data-wf-bindings="%5B%7B%22innerHTML%22%3A%7B%22type%22%3A%22CommercePrice%22%2C%22filter%22%3A%7B%22type%22%3A%22price%22%2C%22params%22%3A%5B%5D%7D%2C%22dataPath%22%3A%22database.commerceOrder.availableShippingMethods%5B%5D.price%22%7D%7D%5D" class="shipping-cost">$ 0.00 USD</div></label></div><div data-node-type="commerce-checkout-shipping-methods-empty-state" style="display:none" class="w-commerce-commercecheckoutshippingmethodsemptystate"><div>No shipping methods are available for the address given.</div></div></fieldset></form><div class="w-commerce-commercecheckoutcustomerinfosummarywrapper"><div class="w-commerce-commercecheckoutsummaryblockheader block-header"><h4 aria-level="2" class="checkout-form-tittle">Customer Information</h4></div><fieldset class="w-commerce-commercecheckoutblockcontent block-content"><div class="w-commerce-commercecheckoutrow"><div class="w-commerce-commercecheckoutcolumn"><div class="w-commerce-commercecheckoutsummaryitem"><label class="w-commerce-commercecheckoutsummarylabel cheakout-label">Email</label><div data-wf-bindings="%5B%7B%22innerHTML%22%3A%7B%22type%22%3A%22PlainText%22%2C%22filter%22%3A%7B%22type%22%3A%22identity%22%2C%22params%22%3A%5B%5D%7D%2C%22dataPath%22%3A%22database.commerceOrder.customerEmail%22%7D%7D%5D" class="customer-mail"></div></div></div><div data-wf-bindings="%5B%5D" data-wf-conditions="%7B%22condition%22%3A%7B%22fields%22%3A%7B%22requiresShipping%22%3A%7B%22eq%22%3A%22true%22%2C%22type%22%3A%22Bool%22%7D%7D%7D%2C%22dataPath%22%3A%22database.commerceOrder%22%7D" class="w-commerce-commercecheckoutcolumn"><div class="w-commerce-commercecheckoutsummaryitem"><label class="w-commerce-commercecheckoutsummarylabel cheakout-label">Shipping Address</label><div data-wf-bindings="%5B%7B%22innerHTML%22%3A%7B%22type%22%3A%22PlainText%22%2C%22filter%22%3A%7B%22type%22%3A%22identity%22%2C%22params%22%3A%5B%5D%7D%2C%22dataPath%22%3A%22database.commerceOrder.shippingAddressAddressee%22%7D%7D%5D" class="order-customer-info"></div><div data-wf-bindings="%5B%7B%22innerHTML%22%3A%7B%22type%22%3A%22PlainText%22%2C%22filter%22%3A%7B%22type%22%3A%22identity%22%2C%22params%22%3A%5B%5D%7D%2C%22dataPath%22%3A%22database.commerceOrder.shippingAddressLine1%22%7D%7D%5D" class="order-customer-info"></div><div data-wf-bindings="%5B%7B%22innerHTML%22%3A%7B%22type%22%3A%22PlainText%22%2C%22filter%22%3A%7B%22type%22%3A%22identity%22%2C%22params%22%3A%5B%5D%7D%2C%22dataPath%22%3A%22database.commerceOrder.shippingAddressLine2%22%7D%7D%5D" class="order-customer-info"></div><div class="w-commerce-commercecheckoutsummaryflexboxdiv order-customer-info"><div data-wf-bindings="%5B%7B%22innerHTML%22%3A%7B%22type%22%3A%22PlainText%22%2C%22filter%22%3A%7B%22type%22%3A%22identity%22%2C%22params%22%3A%5B%5D%7D%2C%22dataPath%22%3A%22database.commerceOrder.shippingAddressCity%22%7D%7D%5D" class="w-commerce-commercecheckoutsummarytextspacingondiv"></div><div data-wf-bindings="%5B%7B%22innerHTML%22%3A%7B%22type%22%3A%22PlainText%22%2C%22filter%22%3A%7B%22type%22%3A%22identity%22%2C%22params%22%3A%5B%5D%7D%2C%22dataPath%22%3A%22database.commerceOrder.shippingAddressState%22%7D%7D%5D" class="w-commerce-commercecheckoutsummarytextspacingondiv"></div><div data-wf-bindings="%5B%7B%22innerHTML%22%3A%7B%22type%22%3A%22PlainText%22%2C%22filter%22%3A%7B%22type%22%3A%22identity%22%2C%22params%22%3A%5B%5D%7D%2C%22dataPath%22%3A%22database.commerceOrder.shippingAddressPostalCode%22%7D%7D%5D" class="w-commerce-commercecheckoutsummarytextspacingondiv"></div></div><div data-wf-bindings="%5B%7B%22innerHTML%22%3A%7B%22type%22%3A%22PlainText%22%2C%22filter%22%3A%7B%22type%22%3A%22identity%22%2C%22params%22%3A%5B%5D%7D%2C%22dataPath%22%3A%22database.commerceOrder.shippingAddressCountry%22%7D%7D%5D" class="order-customer-info last"></div></div></div></div></fieldset></div><div class="w-commerce-commercecheckoutpaymentsummarywrapper"><div class="w-commerce-commercecheckoutsummaryblockheader block-header"><h4 aria-level="2" class="checkout-form-tittle">Payment Info</h4></div><fieldset class="w-commerce-commercecheckoutblockcontent block-content"><div class="w-commerce-commercecheckoutrow"><div class="w-commerce-commercecheckoutcolumn"><div class="w-commerce-commercecheckoutsummaryitem"><label class="w-commerce-commercecheckoutsummarylabel cheakout-label">Payment Info</label><div class="w-commerce-commercecheckoutsummaryflexboxdiv"><div data-wf-bindings="%5B%7B%22innerHTML%22%3A%7B%22type%22%3A%22PlainText%22%2C%22filter%22%3A%7B%22type%22%3A%22identity%22%2C%22params%22%3A%5B%5D%7D%2C%22dataPath%22%3A%22database.commerceOrder.cardProvider%22%7D%7D%5D" class="w-commerce-commercecheckoutsummarytextspacingondiv customer-mail"></div><div data-wf-bindings="%5B%7B%22innerHTML%22%3A%7B%22type%22%3A%22PlainText%22%2C%22filter%22%3A%7B%22type%22%3A%22identity%22%2C%22params%22%3A%5B%5D%7D%2C%22dataPath%22%3A%22database.commerceOrder.cardLastFour%22%7D%7D%5D" class="w-commerce-commercecheckoutsummarytextspacingondiv"></div></div><div class="w-commerce-commercecheckoutsummaryflexboxdiv"><div data-wf-bindings="%5B%7B%22innerHTML%22%3A%7B%22type%22%3A%22PlainText%22%2C%22filter%22%3A%7B%22type%22%3A%22identity%22%2C%22params%22%3A%5B%5D%7D%2C%22dataPath%22%3A%22database.commerceOrder.cardExpiresMonth%22%7D%7D%5D"></div><div data-wf-bindings="%5B%5D" data-wf-conditions="%7B%22condition%22%3A%7B%22fields%22%3A%7B%22cardExpiresMonth%22%3A%7B%22exists%22%3A%22yes%22%2C%22type%22%3A%22PlainText%22%7D%7D%7D%2C%22dataPath%22%3A%22database.commerceOrder%22%7D"> / </div><div data-wf-bindings="%5B%7B%22innerHTML%22%3A%7B%22type%22%3A%22PlainText%22%2C%22filter%22%3A%7B%22type%22%3A%22identity%22%2C%22params%22%3A%5B%5D%7D%2C%22dataPath%22%3A%22database.commerceOrder.cardExpiresYear%22%7D%7D%5D"></div></div></div></div><div class="w-commerce-commercecheckoutcolumn"><div class="w-commerce-commercecheckoutsummaryitem"><label class="w-commerce-commercecheckoutsummarylabel cheakout-label">Billing Address</label><div data-wf-bindings="%5B%7B%22innerHTML%22%3A%7B%22type%22%3A%22PlainText%22%2C%22filter%22%3A%7B%22type%22%3A%22identity%22%2C%22params%22%3A%5B%5D%7D%2C%22dataPath%22%3A%22database.commerceOrder.billingAddressAddressee%22%7D%7D%5D" class="order-customer-info"></div><div data-wf-bindings="%5B%7B%22innerHTML%22%3A%7B%22type%22%3A%22PlainText%22%2C%22filter%22%3A%7B%22type%22%3A%22identity%22%2C%22params%22%3A%5B%5D%7D%2C%22dataPath%22%3A%22database.commerceOrder.billingAddressLine1%22%7D%7D%5D" class="order-customer-info"></div><div data-wf-bindings="%5B%7B%22innerHTML%22%3A%7B%22type%22%3A%22PlainText%22%2C%22filter%22%3A%7B%22type%22%3A%22identity%22%2C%22params%22%3A%5B%5D%7D%2C%22dataPath%22%3A%22database.commerceOrder.billingAddressLine2%22%7D%7D%5D" class="order-customer-info"></div><div class="w-commerce-commercecheckoutsummaryflexboxdiv order-customer-info"><div data-wf-bindings="%5B%7B%22innerHTML%22%3A%7B%22type%22%3A%22PlainText%22%2C%22filter%22%3A%7B%22type%22%3A%22identity%22%2C%22params%22%3A%5B%5D%7D%2C%22dataPath%22%3A%22database.commerceOrder.billingAddressCity%22%7D%7D%5D" class="w-commerce-commercecheckoutsummarytextspacingondiv"></div><div data-wf-bindings="%5B%7B%22innerHTML%22%3A%7B%22type%22%3A%22PlainText%22%2C%22filter%22%3A%7B%22type%22%3A%22identity%22%2C%22params%22%3A%5B%5D%7D%2C%22dataPath%22%3A%22database.commerceOrder.billingAddressState%22%7D%7D%5D" class="w-commerce-commercecheckoutsummarytextspacingondiv"></div><div data-wf-bindings="%5B%7B%22innerHTML%22%3A%7B%22type%22%3A%22PlainText%22%2C%22filter%22%3A%7B%22type%22%3A%22identity%22%2C%22params%22%3A%5B%5D%7D%2C%22dataPath%22%3A%22database.commerceOrder.billingAddressPostalCode%22%7D%7D%5D" class="w-commerce-commercecheckoutsummarytextspacingondiv"></div></div><div data-wf-bindings="%5B%7B%22innerHTML%22%3A%7B%22type%22%3A%22PlainText%22%2C%22filter%22%3A%7B%22type%22%3A%22identity%22%2C%22params%22%3A%5B%5D%7D%2C%22dataPath%22%3A%22database.commerceOrder.billingAddressCountry%22%7D%7D%5D" class="order-customer-info"></div></div></div></div></fieldset></div><div class="w-commerce-commercecheckoutorderitemswrapper"><div class="w-commerce-commercecheckoutsummaryblockheader block-header"><h4 aria-level="2" class="checkout-form-tittle">Items in Order</h4></div><fieldset class="w-commerce-commercecheckoutblockcontent block-content"><script type="text/x-wf-template" id="wf-template-6341170aebf97b2b180c78ff000000000056">%3Cdiv%20role%3D%22listitem%22%20class%3D%22w-commerce-commercecheckoutorderitem%20order-item%22%3E%3Cimg%20data-wf-bindings%3D%22%255B%257B%2522src%2522%253A%257B%2522type%2522%253A%2522ImageRef%2522%252C%2522filter%2522%253A%257B%2522type%2522%253A%2522identity%2522%252C%2522params%2522%253A%255B%255D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.userItems%255B%255D.sku.f_main_image_4dr%2522%257D%257D%255D%22%20src%3D%22%22%20alt%3D%22%22%20class%3D%22w-commerce-commercecartitemimage%20w-dyn-bind-empty%22%2F%3E%3Cdiv%20class%3D%22w-commerce-commercecheckoutorderitemdescriptionwrapper%20order-item-details%22%3E%3Cdiv%20data-wf-bindings%3D%22%255B%257B%2522innerHTML%2522%253A%257B%2522type%2522%253A%2522PlainText%2522%252C%2522filter%2522%253A%257B%2522type%2522%253A%2522identity%2522%252C%2522params%2522%253A%255B%255D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.userItems%255B%255D.product.f_name_%2522%257D%257D%255D%22%20class%3D%22w-commerce-commerceboldtextblock%20ordered-item%20w-dyn-bind-empty%22%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22w-commerce-commercecheckoutorderitemquantitywrapper%20ordered-quantity%22%3E%3Cdiv%3EQuantity%3A%20%3C%2Fdiv%3E%3Cdiv%20data-wf-bindings%3D%22%255B%257B%2522innerHTML%2522%253A%257B%2522type%2522%253A%2522Number%2522%252C%2522filter%2522%253A%257B%2522type%2522%253A%2522numberPrecision%2522%252C%2522params%2522%253A%255B%25220%2522%252C%2522numberPrecision%2522%255D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.userItems%255B%255D.count%2522%257D%257D%255D%22%3E1%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cscript%20type%3D%22text%2Fx-wf-template%22%20id%3D%22wf-template-6341170aebf97b2b180c78ff00000000005f%22%3E%253Cli%2520class%253D%2522ordered-duration%2522%253E%253Cspan%2520data-wf-bindings%253D%2522%25255B%25257B%252522innerHTML%252522%25253A%25257B%252522type%252522%25253A%252522PlainText%252522%25252C%252522filter%252522%25253A%25257B%252522type%252522%25253A%252522identity%252522%25252C%252522params%252522%25253A%25255B%25255D%25257D%25252C%252522dataPath%252522%25253A%252522database.commerceOrder.userItems%25255B%25255D.product.f_sku_properties_3dr%25255B%25255D.name%252522%25257D%25257D%25255D%2522%253E%253C%252Fspan%253E%253Cspan%253E%253A%2520%253C%252Fspan%253E%253Cspan%2520data-wf-bindings%253D%2522%25255B%25257B%252522innerHTML%252522%25253A%25257B%252522type%252522%25253A%252522CommercePropValues%252522%25252C%252522filter%252522%25253A%25257B%252522type%252522%25253A%252522identity%252522%25252C%252522params%252522%25253A%25255B%25255D%25257D%25252C%252522dataPath%252522%25253A%252522database.commerceOrder.userItems%25255B%25255D.product.f_sku_properties_3dr%25255B%25255D%252522%25257D%25257D%25255D%2522%253E%253C%252Fspan%253E%253C%252Fli%253E%3C%2Fscript%3E%3Cul%20data-wf-bindings%3D%22%255B%257B%2522optionSets%2522%253A%257B%2522type%2522%253A%2522CommercePropTable%2522%252C%2522filter%2522%253A%257B%2522type%2522%253A%2522identity%2522%252C%2522params%2522%253A%255B%255D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.userItems%255B%255D.product.f_sku_properties_3dr%5B%5D%2522%257D%257D%252C%257B%2522optionValues%2522%253A%257B%2522type%2522%253A%2522CommercePropValues%2522%252C%2522filter%2522%253A%257B%2522type%2522%253A%2522identity%2522%252C%2522params%2522%253A%255B%255D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.userItems%255B%255D.sku.f_sku_values_3dr%2522%257D%257D%255D%22%20class%3D%22w-commerce-commercecheckoutorderitemoptionlist%22%20data-wf-collection%3D%22database.commerceOrder.userItems%255B%255D.product.f_sku_properties_3dr%22%20data-wf-template-id%3D%22wf-template-6341170aebf97b2b180c78ff00000000005f%22%3E%3Cli%20class%3D%22ordered-duration%22%3E%3Cspan%20data-wf-bindings%3D%22%255B%257B%2522innerHTML%2522%253A%257B%2522type%2522%253A%2522PlainText%2522%252C%2522filter%2522%253A%257B%2522type%2522%253A%2522identity%2522%252C%2522params%2522%253A%255B%255D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.userItems%255B%255D.product.f_sku_properties_3dr%255B%255D.name%2522%257D%257D%255D%22%3E%3C%2Fspan%3E%3Cspan%3E%3A%20%3C%2Fspan%3E%3Cspan%20data-wf-bindings%3D%22%255B%257B%2522innerHTML%2522%253A%257B%2522type%2522%253A%2522CommercePropValues%2522%252C%2522filter%2522%253A%257B%2522type%2522%253A%2522identity%2522%252C%2522params%2522%253A%255B%255D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.userItems%255B%255D.product.f_sku_properties_3dr%255B%255D%2522%257D%257D%255D%22%3E%3C%2Fspan%3E%3C%2Fli%3E%3C%2Ful%3E%3C%2Fdiv%3E%3Cdiv%20data-wf-bindings%3D%22%255B%257B%2522innerHTML%2522%253A%257B%2522type%2522%253A%2522CommercePrice%2522%252C%2522filter%2522%253A%257B%2522type%2522%253A%2522price%2522%252C%2522params%2522%253A%255B%255D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.userItems%255B%255D.rowTotal%2522%257D%257D%255D%22%20class%3D%22ordered-price%22%3E%24%C2%A00.00%C2%A0USD%3C%2Fdiv%3E%3C%2Fdiv%3E</script><div role="list" class="w-commerce-commercecheckoutorderitemslist" data-wf-collection="database.commerceOrder.userItems" data-wf-template-id="wf-template-6341170aebf97b2b180c78ff000000000056"><div role="listitem" class="w-commerce-commercecheckoutorderitem order-item"><img data-wf-bindings="%5B%7B%22src%22%3A%7B%22type%22%3A%22ImageRef%22%2C%22filter%22%3A%7B%22type%22%3A%22identity%22%2C%22params%22%3A%5B%5D%7D%2C%22dataPath%22%3A%22database.commerceOrder.userItems%5B%5D.sku.f_main_image_4dr%22%7D%7D%5D" src="" alt="" class="w-commerce-commercecartitemimage w-dyn-bind-empty"/><div class="w-commerce-commercecheckoutorderitemdescriptionwrapper order-item-details"><div data-wf-bindings="%5B%7B%22innerHTML%22%3A%7B%22type%22%3A%22PlainText%22%2C%22filter%22%3A%7B%22type%22%3A%22identity%22%2C%22params%22%3A%5B%5D%7D%2C%22dataPath%22%3A%22database.commerceOrder.userItems%5B%5D.product.f_name_%22%7D%7D%5D" class="w-commerce-commerceboldtextblock ordered-item w-dyn-bind-empty"></div><div class="w-commerce-commercecheckoutorderitemquantitywrapper ordered-quantity"><div>Quantity: </div><div data-wf-bindings="%5B%7B%22innerHTML%22%3A%7B%22type%22%3A%22Number%22%2C%22filter%22%3A%7B%22type%22%3A%22numberPrecision%22%2C%22params%22%3A%5B%220%22%2C%22numberPrecision%22%5D%7D%2C%22dataPath%22%3A%22database.commerceOrder.userItems%5B%5D.count%22%7D%7D%5D">1</div></div><script type="text/x-wf-template" id="wf-template-6341170aebf97b2b180c78ff00000000005f">%3Cli%20class%3D%22ordered-duration%22%3E%3Cspan%20data-wf-bindings%3D%22%255B%257B%2522innerHTML%2522%253A%257B%2522type%2522%253A%2522PlainText%2522%252C%2522filter%2522%253A%257B%2522type%2522%253A%2522identity%2522%252C%2522params%2522%253A%255B%255D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.userItems%255B%255D.product.f_sku_properties_3dr%255B%255D.name%2522%257D%257D%255D%22%3E%3C%2Fspan%3E%3Cspan%3E%3A%20%3C%2Fspan%3E%3Cspan%20data-wf-bindings%3D%22%255B%257B%2522innerHTML%2522%253A%257B%2522type%2522%253A%2522CommercePropValues%2522%252C%2522filter%2522%253A%257B%2522type%2522%253A%2522identity%2522%252C%2522params%2522%253A%255B%255D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.userItems%255B%255D.product.f_sku_properties_3dr%255B%255D%2522%257D%257D%255D%22%3E%3C%2Fspan%3E%3C%2Fli%3E</script><ul data-wf-bindings="%5B%7B%22optionSets%22%3A%7B%22type%22%3A%22CommercePropTable%22%2C%22filter%22%3A%7B%22type%22%3A%22identity%22%2C%22params%22%3A%5B%5D%7D%2C%22dataPath%22%3A%22database.commerceOrder.userItems%5B%5D.product.f_sku_properties_3dr[]%22%7D%7D%2C%7B%22optionValues%22%3A%7B%22type%22%3A%22CommercePropValues%22%2C%22filter%22%3A%7B%22type%22%3A%22identity%22%2C%22params%22%3A%5B%5D%7D%2C%22dataPath%22%3A%22database.commerceOrder.userItems%5B%5D.sku.f_sku_values_3dr%22%7D%7D%5D" class="w-commerce-commercecheckoutorderitemoptionlist" data-wf-collection="database.commerceOrder.userItems%5B%5D.product.f_sku_properties_3dr" data-wf-template-id="wf-template-6341170aebf97b2b180c78ff00000000005f"><li class="ordered-duration"><span data-wf-bindings="%5B%7B%22innerHTML%22%3A%7B%22type%22%3A%22PlainText%22%2C%22filter%22%3A%7B%22type%22%3A%22identity%22%2C%22params%22%3A%5B%5D%7D%2C%22dataPath%22%3A%22database.commerceOrder.userItems%5B%5D.product.f_sku_properties_3dr%5B%5D.name%22%7D%7D%5D"></span><span>: </span><span data-wf-bindings="%5B%7B%22innerHTML%22%3A%7B%22type%22%3A%22CommercePropValues%22%2C%22filter%22%3A%7B%22type%22%3A%22identity%22%2C%22params%22%3A%5B%5D%7D%2C%22dataPath%22%3A%22database.commerceOrder.userItems%5B%5D.product.f_sku_properties_3dr%5B%5D%22%7D%7D%5D"></span></li></ul></div><div data-wf-bindings="%5B%7B%22innerHTML%22%3A%7B%22type%22%3A%22CommercePrice%22%2C%22filter%22%3A%7B%22type%22%3A%22price%22%2C%22params%22%3A%5B%5D%7D%2C%22dataPath%22%3A%22database.commerceOrder.userItems%5B%5D.rowTotal%22%7D%7D%5D" class="ordered-price">$ 0.00 USD</div></div></div></fieldset></div></div><div class="w-commerce-commercelayoutsidebar"><div class="w-commerce-commercecheckoutordersummarywrapper"><div class="w-commerce-commercecheckoutsummaryblockheader block-header"><h4 aria-level="2" class="checkout-form-tittle">Order Summary</h4></div><fieldset class="w-commerce-commercecheckoutblockcontent block-content"><div class="w-commerce-commercecheckoutsummarylineitem"><div class="order-summary-tittle">Subtotal</div><div data-wf-bindings="%5B%7B%22innerHTML%22%3A%7B%22type%22%3A%22CommercePrice%22%2C%22filter%22%3A%7B%22type%22%3A%22price%22%2C%22params%22%3A%5B%5D%7D%2C%22dataPath%22%3A%22database.commerceOrder.subtotal%22%7D%7D%5D" class="order-price"></div></div><script type="text/x-wf-template" id="wf-template-6341170aebf97b2b180c78ff000000000070">%3Cdiv%20class%3D%22w-commerce-commercecheckoutordersummaryextraitemslistitem%22%3E%3Cdiv%20data-wf-bindings%3D%22%255B%257B%2522innerHTML%2522%253A%257B%2522type%2522%253A%2522PlainText%2522%252C%2522filter%2522%253A%257B%2522type%2522%253A%2522identity%2522%252C%2522params%2522%253A%255B%255D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.extraItems%255B%255D.name%2522%257D%257D%255D%22%20class%3D%22order-summary-tittle%20w-dyn-bind-empty%22%3E%3C%2Fdiv%3E%3Cdiv%20data-wf-bindings%3D%22%255B%257B%2522innerHTML%2522%253A%257B%2522type%2522%253A%2522CommercePrice%2522%252C%2522filter%2522%253A%257B%2522type%2522%253A%2522price%2522%252C%2522params%2522%253A%255B%255D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.extraItems%255B%255D.price%2522%257D%257D%255D%22%20class%3D%22order-price%22%3E%24%C2%A00.00%C2%A0USD%3C%2Fdiv%3E%3C%2Fdiv%3E</script><div class="w-commerce-commercecheckoutordersummaryextraitemslist" data-wf-collection="database.commerceOrder.extraItems" data-wf-template-id="wf-template-6341170aebf97b2b180c78ff000000000070"><div class="w-commerce-commercecheckoutordersummaryextraitemslistitem"><div data-wf-bindings="%5B%7B%22innerHTML%22%3A%7B%22type%22%3A%22PlainText%22%2C%22filter%22%3A%7B%22type%22%3A%22identity%22%2C%22params%22%3A%5B%5D%7D%2C%22dataPath%22%3A%22database.commerceOrder.extraItems%5B%5D.name%22%7D%7D%5D" class="order-summary-tittle w-dyn-bind-empty"></div><div data-wf-bindings="%5B%7B%22innerHTML%22%3A%7B%22type%22%3A%22CommercePrice%22%2C%22filter%22%3A%7B%22type%22%3A%22price%22%2C%22params%22%3A%5B%5D%7D%2C%22dataPath%22%3A%22database.commerceOrder.extraItems%5B%5D.price%22%7D%7D%5D" class="order-price">$ 0.00 USD</div></div></div><div class="w-commerce-commercecheckoutsummarylineitem"><div class="order-summary-tittle">Total</div><div data-wf-bindings="%5B%7B%22innerHTML%22%3A%7B%22type%22%3A%22CommercePrice%22%2C%22filter%22%3A%7B%22type%22%3A%22price%22%2C%22params%22%3A%5B%5D%7D%2C%22dataPath%22%3A%22database.commerceOrder.total%22%7D%7D%5D" class="w-commerce-commercecheckoutsummarytotal order-total-price"></div></div></fieldset></div><a href="#" value="Place Order" data-node-type="commerce-checkout-place-order-button" class="w-commerce-commercecheckoutplaceorderbutton button-primary" data-loading-text="Placing Order...">Place Order</a><div data-node-type="commerce-checkout-error-state" style="display:none" class="w-commerce-commercepaypalcheckouterrorstate"><div aria-live="polite" class="w-checkout-error-msg" data-w-info-error="There was an error processing your customer info. Please try again, or contact us if you continue to have problems." data-w-shipping-error="Sorry. We can’t ship your order to the address provided." data-w-billing-error="Your payment could not be completed with the payment information provided. Please make sure that your card and billing address information is correct, or try a different payment card, to complete this order. Contact us if you continue to have problems." data-w-minimum-error="The order minimum was not met. Add more items to your cart to continue." data-w-payment-error="There was an error processing your payment. Please try again, or contact us if you continue to have problems." data-w-pricing-error="The prices of one or more items in your cart have changed. Please refresh this page and try again." data-w-extras-error="A merchant setting has changed that impacts your cart. Please refresh and try again." data-w-product-error="One or more of the products in your cart have been removed. Please refresh the page and try again." data-w-invalid-discount-error="This discount is invalid." data-w-expired-discount-error="This discount is no longer available." data-w-usage-reached-discount-error="This discount is no longer available." data-w-requirements-not-met-error="">There was an error processing your customer info. Please try again, or contact us if you continue to have problems.</div></div></div></div></div><div class="old-footer-hidden"><div class="footer v3"><div class="container"><div class="footer-top"><div data-w-id="2773ac86-20ca-ff75-03f4-8f0a208607f4" class="footer-details-wrapper"><a href="../products/cap-table-management/index.html" class="footer-logo-wrap w-inline-block"><img src="https://cdn.prod.website-files.com/6433d879545aff6081fcc017/6433d879545aff8be4fcc10b_Safozai-Footer-Logo-V3.svg" loading="lazy" alt=""/></a><p class="footer-details">Denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth lorem ipsum dolor amet.</p><div class="footer-contact-wrap"><div class="footer-contact-info white">Email : safozai@gmail.com</div><div class="footer-contact-info white">Phone : +536 98760 8809</div></div></div><div id="w-node-_2773ac86-20ca-ff75-03f4-8f0a208607fe-208607f1" class="footer-links-wrapper"><div data-w-id="2773ac86-20ca-ff75-03f4-8f0a208607ff" class="single-footer-links-wrapper"><h4 class="footer-links-tittle">Navigation</h4><div class="footer-links-wrap"><a href="../products/cap-table-management/index.html" class="single-footer-link">Home</a><a href="../pricing/index.html" class="single-footer-link">Pricing</a><a href="../about-us/index.html" class="single-footer-link">About US</a><a href="../contact/index.html" class="single-footer-link">Contact</a><a href="../blog/index.html" class="single-footer-link">Blog</a><a href="#" class="single-footer-link">Career</a><a href="#" class="single-footer-link">Integrations</a><a href="#" class="single-footer-link">Demo</a></div></div><div data-w-id="2773ac86-20ca-ff75-03f4-8f0a20860813" class="single-footer-links-wrapper"><h4 class="footer-links-tittle">Utility Pages</h4><div class="footer-links-wrap"><a href="#" class="single-footer-link">Style guide</a><a href="../401/index.html" class="single-footer-link">Protected Password</a><a href="../404/index.html" class="single-footer-link">404 Not found</a><a href="#" class="single-footer-link">License</a><a href="#" class="single-footer-link">Changelog</a><a href="#" class="single-footer-link">Log In</a><a href="#" class="single-footer-link">Sign Up</a><a href="#" class="single-footer-link">Downloads</a></div></div></div><div id="w-node-_2773ac86-20ca-ff75-03f4-8f0a20860827-208607f1" data-w-id="2773ac86-20ca-ff75-03f4-8f0a20860827" class="footer-subscription-wrapper"><div class="footer-subscription-wrap"><div class="footer-subscrie-form-wrap w-form"><form id="email-form-2" name="email-form-2" data-name="Email Form 2" method="get" data-wf-page-id="65fa51d760a13e9aa7240538" data-wf-element-id="2773ac86-20ca-ff75-03f4-8f0a2086082a" data-turnstile-sitekey="0x4AAAAAAAQTptj2So4dx43e"><h4 class="footer-subscribe-tittle">Subscribe Newsletter</h4><div class="footer-subscribe-sub-tittle">Subscribe our newsletter to get more.</div><input class="footer-subscribe-field v3 w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="Email address" type="email" id="email-2" required=""/><input type="submit" data-wait="Please wait..." class="footer-subscribe-submit v3 w-button" value="Subscribe"/></form><div class="w-form-done"><div>Thank you! Your submission has been received!</div></div><div class="w-form-fail"><div>Oops! Something went wrong while submitting the form.</div></div></div></div></div></div><div class="footer-bottom"><div data-w-id="2773ac86-20ca-ff75-03f4-8f0a20860838" class="footer-bottom-text">Design &amp; Developed by <a href="https://www.flowzai.com/" target="_blank" class="footer-site-link">Flowzai</a>. Powered by <a href="https://webflow.com/" target="_blank" class="footer-site-link">Webflow</a></div><div data-w-id="2773ac86-20ca-ff75-03f4-8f0a2086083f" class="footer-bottom-links-wrapper"><a href="https://www.facebook.com/" target="_blank" class="single-social-link w-inline-block"><div></div></a><a href="https://web.skype.com/" target="_blank" class="single-social-link w-inline-block"><div></div></a><a href="http://twitter.com/home" target="_blank" class="single-social-link w-inline-block"><div></div></a><a href="https://www.linkedin.com/" target="_blank" class="single-social-link w-inline-block"><div></div></a><a href="https://dribbble.com/" target="_blank" class="single-social-link w-inline-block"><div></div></a></div></div></div></div></div></div><footer class="elf-footer"><div class="elf-noise"></div><div class="elf-inner"><div class="elf-g2badges"><img loading="lazy" src="https://cdn.prod.website-files.com/6433d879545aff6081fcc017/6accbdc07dae5db74aacff36_g2-award-badges.webp" alt="G2 award badges: Momentum Leader, High Performer, and Users Love Us" sizes="100vw" srcset="https://cdn.prod.website-files.com/6433d879545aff6081fcc017/6accbdc07dae5db74aacff36_g2-award-badges-p-500.webp 500w, https://cdn.prod.website-files.com/6433d879545aff6081fcc017/6accbdc07dae5db74aacff36_g2-award-badges.webp 722w" class="elf-g2badges-img"/></div><div class="elf-top"><div><a href="../index.html" class="elf-logo"><img loading="lazy" src="https://cdn.prod.website-files.com/6433d879545aff6081fcc017/6a9543b18a6e4ee018a1e0b4_equitylist-logo-white.svg" alt="EquityList" class="elf-logo-img"/></a><p class="elf-tagline-3">Everything about equity, handled. Cap table, compensation, and compliance, managed end to end for founders, finance, and legal teams.</p><div class="elf-newsletter"><p class="elf-newsletter-label-3">Product Updates</p><div class="home-selfserve-form elf-newsletter-shell w-form"><form id="wf-form-product-updates" name="wf-form-product-updates" data-name="product-updates" method="post" class="form-8 elf-newsletter-row" data-wf-page-id="65fa51d760a13e9aa7240538" data-wf-element-id="d13b075b-5f7e-486e-6232-7fbfad654e19" data-turnstile-sitekey="0x4AAAAAAAQTptj2So4dx43e"><label for="home-selfserve-email" class="home-selfserve-sr-only">Work email</label><input class="home-selfserve-input elf-newsletter-input w-input" autocomplete="email" maxlength="256" name="email" data-name="email" placeholder="you@company.com" type="email" id="home-selfserve-email" required=""/><input type="submit" data-wait="Please wait..." class="home-selfserve-button elf-newsletter-button w-button" value="Submit"/></form><div class="elf-newsletter-success w-form-done"><div class="elf-disclaimer-label-3">Thank you!</div></div><div class="w-form-fail"><div>Oops! Something went wrong while submitting the form.</div></div><span aria-hidden="true" class="home-selfserve-ui-seed"></span></div></div><div class="elf-badges"><span class="elf-badge-2"><svg stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="currentColor" fill="none" viewBox="0 0 24 24" height="13" width="13" class="elf-badge-icon elf-badge-icon"><path d="M20 13c0 5-3.5 7.5-7.35 8.95a1 1 0 0 1-.6.05C8.5 20.5 4 18 4 13V6a1 1 0 0 1 .78-.98A17.35 17.35 0 0 0 12 3a17.35 17.35 0 0 0 7.22 2.02A1 1 0 0 1 20 6Z"></path><path d="m9 12 2 2 4-4"></path></svg>ISO 27001</span><span class="elf-badge-2"><svg stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="currentColor" fill="none" viewBox="0 0 24 24" height="13" width="13" class="elf-badge-icon elf-badge-icon"><rect ry="2" rx="2" y="11" x="3" height="11" width="18"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>SOC 2</span><span class="elf-badge-2"><svg stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="currentColor" fill="none" viewBox="0 0 24 24" height="13" width="13" class="elf-badge-icon elf-badge-icon"><circle r="10" cy="12" cx="12"></circle><path d="M2 12h20"></path><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>GDPR</span></div></div><div class="elf-columns"><div><p class="elf-col-title">Product</p><ul role="list" class="elf-col-list"><li><a href="../products/cap-table-management/index.html" class="elf-link-2">Cap Table Management</a></li><li><a href="https://www.equitylist.co/products/stocks-option-management" class="elf-link-2">Equity Grants Management</a></li><li><a href="../products/shareholder-management/index.html" class="elf-link-2">Shareholder Management</a></li><li><a href="../409a-valuation/index.html" class="elf-link-2">409A Valuations</a></li><li><a href="../esop-advisory/index.html" class="elf-link-2">Equity Advisory</a></li><li><a href="../secretarial-compliance/index.html" class="elf-link-2">Secretarial Compliance</a></li><li><a href="../products/dematerialisation-of-shares/index.html" class="elf-link-2">Dematerialization</a></li></ul></div><div><p class="elf-col-title">Solutions</p><ul role="list" class="elf-col-list"><li><a href="https://www.equitylist.co/india/public-listed-esop-software" class="elf-link-2">For Public Companies</a></li><li><a href="../private-companies/index.html" class="elf-link-2">For Private Companies</a></li><li><a href="../solutions/founder/index.html" class="elf-link-2">For Founders</a></li><li><a href="../solutions/finance/index.html" class="elf-link-2">For Finance</a></li><li><a href="../solutions/hr/index.html" class="elf-link-2">For People Teams</a></li></ul></div><div><p class="elf-col-title">Explore</p><ul role="list" class="elf-col-list"><li><a href="../blog/index.html" class="elf-link-2">Blog</a><a href="https://newsletter.equitylist.co/" target="_blank" class="elf-link-2">EquityList Digest</a></li><li><a href="../customer-stories/index.html" class="elf-link-2">Case Studies</a></li><li><a href="../roi-calculator/index.html" class="elf-link-2">Spreadsheets vs Software</a></li><li><a href="../angel-investors-india/index.html" class="elf-link-2">Active angel investors (India)</a></li><li><a href="../venture-capital-firms-india/index.html" class="elf-link-2">Active VCs (India)</a></li><li><a href="../safe-calculator/index.html" class="elf-link-2">SAFE Calculator</a></li><li><a href="https://community.equitylist.co" class="elf-link-2">Community</a></li><li><a href="../carta-alternative/index.html" class="elf-link-2">EquityList vs Carta</a></li><li><a href="../pulley-alternative/index.html" class="elf-link-2">EquityList vs Pulley</a></li><li><a href="../qapita-alternative/index.html" class="elf-link-2">EquityList vs Qapita</a></li><li><a href="../templates/index.html" class="elf-link-2">Templates</a></li></ul></div><div><p class="elf-col-title">Company</p><ul role="list" class="elf-col-list"><li><a href="../about-us/index.html" class="elf-link-2">About Us</a></li><li><a href="https://wellfound.com/company/equitylist" class="elf-link-2">Careers</a></li><li><a href="../contact/index.html" class="elf-link-2">Contact</a></li></ul></div><div><p class="elf-col-title">Legal</p><ul role="list" class="elf-col-list"><li><a href="../site-map/index.html" class="elf-link-2">Site Map</a></li><li><a href="https://security.equitylist.co/" class="elf-link-2">Security</a></li><li><a href="../cookie-policy/index.html" class="elf-link-2">Cookie Policy</a></li><li><a href="../terms-and-conditions/index.html" class="elf-link-2">Terms of Service</a></li><li><a href="../privacy-policy/index.html" class="elf-link-2">Privacy Policy</a></li></ul></div></div></div><div class="elf-bottom"><div class="elf-bottom-left"><p class="elf-copyright-2">© 2026 EquityList. All rights reserved.</p><div class="w-embed w-script"><style>
+.elf-region{display:inline-flex;align-items:center;flex-wrap:wrap;gap:6px;margin-top:24px;font-family:Geist,sans-serif;font-size:12px;line-height:1.6;color:#fff6}
+.elf-region select{-webkit-appearance:none;-moz-appearance:none;appearance:none;max-width:100%;border:0;border-bottom:1px solid #ffffff1a;border-radius:0;background:transparent;padding:0 2px 2px;font-family:inherit;font-size:12px;line-height:inherit;color:#ffffff8c;cursor:pointer;outline:none;transition:color .2s,border-color .2s}
+.elf-region select:hover{color:#fff;border-bottom-color:#ffffff59}
+.elf-region select:focus-visible{color:#fff;border-bottom-color:#ffffff8c}
+.elf-region select option{background:#0b0712;color:#fff}
+</style>
+<label class='elf-region'>Pricing shown for
+<select data-elf-region aria-label='Pricing shown for'>
+<option data-path='/pricing'>United States</option>
+<option data-path='/pricing-india'>India</option>
+<option data-path='/pricing'>United Kingdom</option>
+<option data-path='/pricing'>Singapore</option>
+<option data-path='/pricing'>Canada</option>
+<option data-path='/pricing'>Europe</option>
+<option data-path='/pricing'>Australia / Oceania</option>
+<option data-path='/pricing'>MENA</option>
+<option data-path='/pricing'>Rest of world</option>
+</select>
+</label>
+<script>
+(function(){
+var KEY='el.pricing.region';
+var CK='el_pricing_country';
+function save(v){try{localStorage.setItem(KEY,v)}catch(e){}}
+function load(){try{return localStorage.getItem(KEY)}catch(e){return null}}
+function saveCountry(c){try{localStorage.setItem(CK,JSON.stringify({c:c,t:Date.now(),w:0}))}catch(e){}}
+function pathOf(sel,label){
+for(var i=0;i<sel.options.length;i++){if(sel.options[i].text===label){return sel.options[i].getAttribute('data-path')}}
+return null;
+}
+function init(){
+var sel=document.querySelector('[data-elf-region]');
+if(!sel||sel.getAttribute('data-bound')){return}
+sel.setAttribute('data-bound','1');
+var here=location.pathname;
+if(here.length>1&&here.charAt(here.length-1)==='/'){here=here.slice(0,-1)}
+var saved=load();
+if(saved&&pathOf(sel,saved)===here){sel.value=saved}
+else if(here==='/pricing-india'){sel.value='India'}
+else if(here==='/pricing'){sel.value='United States'}
+else if(saved&&pathOf(sel,saved)){sel.value=saved}
+sel.addEventListener('change',function(){
+var o=this.options[this.selectedIndex];
+var p=o.getAttribute('data-path');
+save(o.text);
+saveCountry(p==='/pricing-india'?'IN':'XX');
+if(p!==here){location.href=p}
+});
+}
+if(document.readyState!=='loading'){init()}else{document.addEventListener('DOMContentLoaded',init)}
+})();
+</script>
+</div><p class="elf-disclaimer-label-3">Disclaimer</p><p class="elf-disclaimer-4">Figures, testimonials, and comparisons shown on this site are illustrative and for demonstration purposes only. Feature availability may vary by plan, configuration, and jurisdiction. Please conduct your own due diligence before making a purchasing decision.</p><p class="elf-contact-3">Questions or corrections? <a href="mailto:help@equitylist.co" class="elf-contact-link">help@equitylist.co</a></p></div><div class="elf-social"><a rel="noopener noreferrer" target="_blank" href="https://www.linkedin.com/company/equitylist" class="elf-social-link">LinkedIn</a><a rel="noopener noreferrer" target="_blank" href="https://x.com/EquityListHQ" class="elf-social-link">X</a><a rel="noopener noreferrer" target="_blank" href="https://www.youtube.com/@EquityListHQ" class="elf-social-link">YouTube</a></div></div></div><div class="elf-wordmark-wrap"><p class="elf-wordmark-7">EquityList</p></div></footer><script src="../js/9db35b64-jquery-3.5.1.min.dc5e7f18c8.js?site=6433d879545aff6081fcc017" type="text/javascript"></script><script src="../js/cf117821-webflow.schunk.74ea8a2c7221f12c.js" type="text/javascript"></script><script src="../js/fe235868-webflow.schunk.ef8dfba11f544170.js" type="text/javascript"></script><script src="../js/94e6bb32-webflow.schunk.2098a1b1a01cd5f9.js" type="text/javascript"></script><script src="../js/d1685387-webflow.schunk.e186a46350bb17d7.js" type="text/javascript"></script><script src="../js/afaee4b6-webflow.38cdd68d.c57d7c6173313205.js" type="text/javascript"></script><script src="../js/8e6c1f2e-gsap.min.js" type="text/javascript"></script><!-- Google Tag Manager (noscript) — Webflow can't place this right after <body>, but this is acceptable -->
+<noscript>
+  <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NWQ4KLRG" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+
+<!-- (Your UI scripts & styles kept) -->
+<style>
+  .icon{ opacity:0; transform: translateX(-10px); transition: all .3s ease; }
+  #main-navbar{ transition: background-color .3s ease; z-index:1000; background-color:transparent; }
+  .navbar-2{
+    backdrop-filter: blur(8px);
+    box-shadow:
+      0px 21.33px 35.54px -14.22px rgba(99, 91, 255, 0.08),
+      0px 3.55px 5.33px 0px rgba(99, 91, 255, 0.04),
+      0px 0.89px 1.78px 0px rgba(99, 91, 255, 0.08),
+      0px 0px 1px 1px rgba(0,0,0,.14) inset;
+  }
+</style>
+
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script>
+(() => {
+  function init() {
+    if (window.gsap && window.ScrollTrigger) gsap.registerPlugin(ScrollTrigger);
+    const navbar = document.querySelector("#main-navbar");
+    if (navbar && window.ScrollTrigger) {
+      ScrollTrigger.create({
+        start: 1,
+        onEnter: () => gsap.to(navbar, {backgroundColor:"#ffffff", duration:0.3, ease:"power1.out"}),
+        onLeaveBack: () => gsap.to(navbar, {backgroundColor:"transparent", duration:0.3, ease:"power1.in"})
+      });
+    }
+    const links = document.querySelectorAll(".nav-link");
+    links.forEach(link => {
+      const icon = link.querySelector(".icon");
+      if (!icon) return;
+      link.addEventListener("pointerenter", () => gsap.to(icon, {opacity:1, x:0, duration:0.08, ease:"power1.out"}));
+      link.addEventListener("pointerleave", () => gsap.to(icon, {opacity:0, x:-12, duration:0.15, ease:"power1.in"}));
+    });
+    if (typeof window.runWaveAnimation === "function") window.runWaveAnimation();
+  }
+  if (document.readyState === "loading") { document.addEventListener("DOMContentLoaded", init); } else { init(); }
+  if (typeof window.runWaveAnimation === "function") window.addEventListener("DOMContentLoaded", window.runWaveAnimation);
+})();
+</script>
+
+<!-- Intercom (always loads, delayed 5s) -->
+<script>
+  window.intercomSettings = { api_base: "https://api-iam.intercom.io", app_id: "qgy57ww7" };
+  setTimeout(function(){
+    (function(){
+      var w=window, ic=w.Intercom;
+      if (typeof ic==="function"){ ic('reattach_activator'); ic('update', w.intercomSettings); }
+      else {
+        var d=document, i=function(){ i.c(arguments); }; i.q=[]; i.c=function(args){ i.q.push(args); };
+        w.Intercom=i;
+        var l=function(){ var s=d.createElement('script'); s.type='text/javascript'; s.async=true; s.src='https://widget.intercom.io/widget/qgy57ww7';
+          var x=d.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s,x); };
+        if (d.readyState==='complete'){ l(); } else if (w.attachEvent){ w.attachEvent('onload',l); } else { w.addEventListener('load', l, false); }
+      }
+    })();
+  }, 5000);
+</script>
+
+<!-- LinkedIn Insight (kept as-is) -->
+<script type="fs-cc" fs-cc-categories="marketing">
+  _linkedin_partner_id = "6402585";
+  window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+  window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+  (function(l){
+    if(!l){ window.lintrk = function(a,b){ window.lintrk.q.push([a,b]) }; window.lintrk.q=[]; }
+    var s=document.getElementsByTagName("script")[0], b=document.createElement("script");
+    b.type="text/javascript"; b.async=true; b.src="https://snap.licdn.com/li.lms-analytics/insight.min.js";
+    s.parentNode.insertBefore(b,s);
+  })(window.lintrk);
+</script>
+<!-- LinkedIn noscript pixel removed: it cannot respect interactive consent. -->
+
+<!-- HubSpot -->
+<script id="hs-script-loader" async defer src="//js.hs-scripts.com/21484878.js" type="fs-cc" fs-cc-categories="marketing"></script>
+
+<!-- Pagination top scroll (kept) -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    window.addEventListener('click', function (event) {
+      if (event.target.classList.contains('pagination_page-button')) {
+        setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 100);
+      }
+    });
+  });
+</script>
+
+<!-- Consent Mode: LISTEN for banner actions ONLY (we moved the "re-apply saved state" to HEAD) -->
+<script>
+  // ensure dataLayer exists (GTM will create it too; this is safe)
+  window.dataLayer = window.dataLayer || [];
+  function emitConsentEvent(name, params) {
+    // push a GTM-friendly event object so GA4 Event tags can fire
+    window.dataLayer.push(Object.assign({ event: name }, params || {}));
+  }
+
+  function saveConsent(mode, opts) {
+    try {
+      localStorage.setItem('ga_consent', mode); // 'granted' | 'denied' | 'granular'
+      if (mode === 'granular') {
+        localStorage.setItem('ga_analytics', (opts && opts.analyticsOn) ? '1' : '0');
+        localStorage.setItem('ga_marketing', (opts && opts.marketingOn) ? '1' : '0');
+        localStorage.setItem('ga_personalization', (opts && opts.personalizationOn) ? '1' : '0');
+      } else {
+        localStorage.removeItem('ga_analytics');
+        localStorage.removeItem('ga_marketing');
+        localStorage.removeItem('ga_personalization');
+      }
+    } catch(e) {}
+  }
+
+  document.addEventListener('click', function(e){
+    const el = e.target.closest('[fs-cc]');
+    if (!el) return;
+    const action = el.getAttribute('fs-cc');
+
+    if (action === 'allow') {
+      saveConsent('granted');
+      gtag('consent','update', {
+        ad_storage:'granted', analytics_storage:'granted',
+        ad_user_data:'granted', ad_personalization:'granted', personalization_storage:'granted'
+      });
+      // fire only GTM custom event (removed duplicate GA4 event)
+      setTimeout(() => emitConsentEvent('consent_granted'), 500);
+    }
+
+    if (action === 'deny') {
+      saveConsent('denied');
+      gtag('consent','update', {
+        ad_storage:'denied', analytics_storage:'denied',
+        ad_user_data:'denied', ad_personalization:'denied', personalization_storage:'denied'
+      });
+      // fire only GTM custom event (removed duplicate GA4 event)
+      setTimeout(() => emitConsentEvent('consent_denied'), 500);
+    }
+
+    if (action === 'submit') {
+      const analyticsOn = document.querySelector('[fs-cc-checkbox="analytics"]')?.checked || false;
+      const marketingOn = document.querySelector('[fs-cc-checkbox="marketing"]')?.checked || false;
+
+      const personalizationOn = document.querySelector('[fs-cc-checkbox="personalization"]')?.checked || false;
+      saveConsent('granular', { analyticsOn, marketingOn, personalizationOn });
+      gtag('consent','update', {
+        analytics_storage:   analyticsOn ? 'granted':'denied',
+        ad_storage:          marketingOn ? 'granted':'denied',
+        ad_user_data:        marketingOn ? 'granted':'denied',
+        ad_personalization:  marketingOn ? 'granted':'denied',
+        personalization_storage: personalizationOn ? 'granted':'denied'
+      });
+
+      // fire only GTM custom event (removed duplicate GA4 event)
+      setTimeout(() => emitConsentEvent('consent_preferences_saved', {
+  analytics_on: analyticsOn ? '1' : '0',
+  marketing_on: marketingOn ? '1' : '0'
+}), 500);
+    }
+  });
+</script>
+
+<script>
+(function(){
+  fetch('https://cdn.jsdelivr.net/gh/Vigneshshankaran/website@main/footer.js')
+    .then(function(r){ return r.text(); })
+    .then(function(txt){
+      var js = txt.replace(/<\/?script[^>]*>/gi, '');
+      var s = document.createElement('script');
+      s.textContent = js;
+      document.body.appendChild(s);
+    })
+    .catch(function(e){ console.error('footer.js failed to load', e); });
+})();
+</script><script src="../js/6a4435ab-6433d879545aff6081fcc017-689e5ba67671442434f3ca35-69dc927568c50dd7e7cf4966-blog_schema_with_faq_collection-1.0.0.js" type="text/javascript"></script><script src="../js/b15b0e9c-6433d879545aff6081fcc017-689e5ba67671442434f3ca35-6a9e4100eaa2f44e18dda22b-ppcscrollspy-1.0.0.js" type="text/javascript"></script><script src="../js/4d730e2b-6433d879545aff6081fcc017-689e5ba67671442434f3ca35-6a9fa8e5df5bfa385e2776ff-scmmodalclosescoped-1.0.0.js" type="text/javascript"></script><script src="../js/3f2cab2e-6433d879545aff6081fcc017-689e5ba67671442434f3ca35-6ae9d16ede1b7896424331e2-producttourpopup-1.0.4.js" type="text/javascript"></script></body></html>
